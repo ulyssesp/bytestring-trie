@@ -1,0 +1,529 @@
+
+==================== FINAL INTERFACE ====================
+2018-07-20 18:06:42.831709 UTC
+
+interface bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX:Data.Trie.ByteStringInternal 8001
+  interface hash: a14b06bdf164fa8728eb7d754251e075
+  ABI hash: bf2bb815b22e2d3f05bd812f82c519b8
+  export-list hash: d460a1523e9dff7fa14b4e8b29362579
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 1d257ce22e1dd0d70c86472f22625c47
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.Trie.ByteStringInternal.appendBuilder
+  Data.Trie.ByteStringInternal.appendSnoc
+  Data.Trie.ByteStringInternal.breakMaximalPrefix
+  Data.Trie.ByteStringInternal.emptyBuilder
+  Data.Trie.ByteStringInternal.runBuilder
+  Data.Trie.ByteStringInternal.snocBuilder
+  Data.ByteString.Internal.ByteString
+  Data.Trie.ByteStringInternal.Builder
+  Data.Trie.ByteStringInternal.ByteStringElem
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Data.Word cf9c7419e077bbdd2be059981bfe778f
+import  -/  base-4.9.0.0:Foreign.ForeignPtr 53e52b80aab8766f793fb36a5062e224
+import  -/  base-4.9.0.0:Foreign.ForeignPtr.Imp 4b8d5013c219bdef52883be5bedbc308
+import  -/  base-4.9.0.0:Foreign.Ptr 35bfa7ef7aef87077b5a1267eefba6fa
+import  -/  base-4.9.0.0:Foreign.Storable 95717af526f1aa9266bec9a33467111a
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.0.0:GHC.ForeignPtr 3d7de82fc0d2a55686a19fd307aec2b2
+import  -/  base-4.9.0.0:GHC.IO.Unsafe 276f6da8df90ae37df2309090008ba6e
+import  -/  base-4.9.0.0:GHC.Num f0aed3315b3ed1b330b71fc4148a5581
+import  -/  base-4.9.0.0:GHC.Ptr 8950b7fd7c69674ea470c5843687e247
+import  -/  base-4.9.0.0:GHC.Real 011de9ca3282ad24a84e4e15f974f98e
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  base-4.9.0.0:System.IO.Unsafe de21ace402ace63ef08022598ba2dcb0
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString 94d879de7c0c4c728d40df2175a8ec14
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Internal c4a5d5c11e9c7b86fbb578dc42b94086
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+addDependentFile "C:\Users\ulyssesp\AppData\Local\Programs\stack\x86_64-windows\ghc-8.0.1\lib\include\ghcversion.h"
+addDependentFile ".stack-work\dist\b7fec021\build\autogen\cabal_macros.h"
+cb8848b3005861fe7d5e0aa877fee9ef
+  $tc'Builder :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15397072795116887542##
+                   1074006213517159075##
+                   Data.Trie.ByteStringInternal.$trModule
+                   Data.Trie.ByteStringInternal.$tc'Builder1) -}
+6b83328f82ab2500b0c34b510896a888
+  $tc'Builder1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Builder"#) -}
+8c0702d1ea0ab588b3e9dc8a844c8cd9
+  $tcBuilder :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11988582198505273492##
+                   13259364433341133683##
+                   Data.Trie.ByteStringInternal.$trModule
+                   Data.Trie.ByteStringInternal.$tcBuilder1) -}
+a35b60649f4617f97ef78db3a8968833
+  $tcBuilder1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Builder"#) -}
+4da943d42bd77846af5a74b330382180
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Data.Trie.ByteStringInternal.$trModule2
+                   Data.Trie.ByteStringInternal.$trModule1) -}
+713a791bd0389b10c0792d450e04c34d
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Data.Trie.ByteStringInternal"#) -}
+8969edd1680ef82ab44737223f9bb1f9
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX"#) -}
+9e4991596b8f934342977d7327c05756
+  $wbreakMaximalPrefix ::
+    GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> (Data.ByteString.Internal.ByteString,
+        Data.ByteString.Internal.ByteString,
+        Data.ByteString.Internal.ByteString)
+  {- Arity: 8, Strictness: <L,U><L,U><L,U><S,U><L,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Addr#)
+                   (ww1 :: GHC.ForeignPtr.ForeignPtrContents)
+                   (ww2 :: GHC.Prim.Int#)
+                   (ww3 :: GHC.Prim.Int#)
+                   (ww4 :: GHC.Prim.Addr#)
+                   (ww5 :: GHC.ForeignPtr.ForeignPtrContents)
+                   (ww6 :: GHC.Prim.Int#)
+                   (ww7 :: GHC.Prim.Int#) ->
+                 case ww3 of wild {
+                   DEFAULT
+                   -> case ww7 of wild1 {
+                        DEFAULT
+                        -> case GHC.Magic.runRW#
+                                  @ 'GHC.Types.PtrRepLifted
+                                  @ (Data.ByteString.Internal.ByteString,
+                                     Data.ByteString.Internal.ByteString,
+                                     Data.ByteString.Internal.ByteString)
+                                  (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                   let {
+                                     $j :: GHC.Prim.Int#
+                                           -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                                 (Data.ByteString.Internal.ByteString,
+                                                  Data.ByteString.Internal.ByteString,
+                                                  Data.ByteString.Internal.ByteString) #)
+                                       {- Arity: 1 -}
+                                     = \ (ww8 :: GHC.Prim.Int#)[OneShot] ->
+                                       let {
+                                         lvl :: GHC.Types.Int = GHC.Types.I# ww8
+                                       } in
+                                       let {
+                                         p1 :: GHC.Prim.Addr# = GHC.Prim.plusAddr# ww ww2
+                                       } in
+                                       let {
+                                         p2 :: GHC.Prim.Addr# = GHC.Prim.plusAddr# ww4 ww6
+                                       } in
+                                       letrec {
+                                         $wgoByte :: GHC.Prim.Int#
+                                                     -> GHC.Prim.State# GHC.Prim.RealWorld
+                                                     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                                           GHC.Types.Int #)
+                                           {- Arity: 2, Strictness: <S,U><S,U>, Inline: [0] -}
+                                         = \ (ww9 :: GHC.Prim.Int#)
+                                             (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                           case GHC.Prim.tagToEnum#
+                                                  @ GHC.Types.Bool
+                                                  (GHC.Prim.>=# ww9 ww8) of wild2 {
+                                             GHC.Types.False
+                                             -> case GHC.Prim.readWord8OffAddr#
+                                                       @ GHC.Prim.RealWorld
+                                                       p1
+                                                       ww9
+                                                       w of ds2 { (#,#) ipv ipv1 ->
+                                                case GHC.Prim.readWord8OffAddr#
+                                                       @ GHC.Prim.RealWorld
+                                                       p2
+                                                       ww9
+                                                       ipv of ds1 { (#,#) ipv2 ipv3 ->
+                                                case GHC.Prim.tagToEnum#
+                                                       @ GHC.Types.Bool
+                                                       (GHC.Prim.eqWord# ipv1 ipv3) of wild3 {
+                                                  GHC.Types.False -> (# ipv2, GHC.Types.I# ww9 #)
+                                                  GHC.Types.True
+                                                  -> $wgoByte (GHC.Prim.+# ww9 1#) ipv2 } } }
+                                             GHC.Types.True -> (# w, lvl #) }
+                                       } in
+                                       case $wgoByte 0# s of ds1 { (#,#) ipv ipv1 ->
+                                       case ipv1 of wild2 { GHC.Types.I# y ->
+                                       case case GHC.Prim.tagToEnum#
+                                                   @ GHC.Types.Bool
+                                                   (GHC.Prim.<#
+                                                      (GHC.Prim.+# ww2 wild)
+                                                      (GHC.Prim.+# ww6 wild1)) of wild3 {
+                                              GHC.Types.False
+                                              -> case GHC.Prim.tagToEnum#
+                                                        @ GHC.Types.Bool
+                                                        (GHC.Prim.<=# y 0#) of wild4 {
+                                                   GHC.Types.False
+                                                   -> Data.ByteString.Internal.PS ww4 ww5 ww6 y
+                                                   GHC.Types.True -> Data.ByteString.empty }
+                                              GHC.Types.True
+                                              -> case GHC.Prim.tagToEnum#
+                                                        @ GHC.Types.Bool
+                                                        (GHC.Prim.<=# y 0#) of wild4 {
+                                                   GHC.Types.False
+                                                   -> Data.ByteString.Internal.PS ww ww1 ww2 y
+                                                   GHC.Types.True
+                                                   -> Data.ByteString.empty } } of x1 { Data.ByteString.Internal.PS ipv2 ipv3 ipv4 ipv5 ->
+                                       let {
+                                         x :: GHC.Prim.Int# = GHC.Prim.-# wild1 y
+                                       } in
+                                       case case GHC.Prim.tagToEnum#
+                                                   @ GHC.Types.Bool
+                                                   (GHC.Prim.<=# x 0#) of wild3 {
+                                              GHC.Types.False
+                                              -> Data.ByteString.Internal.PS
+                                                   ww4
+                                                   ww5
+                                                   (GHC.Prim.+# ww6 y)
+                                                   x
+                                              GHC.Types.True
+                                              -> Data.ByteString.empty } of x2 { Data.ByteString.Internal.PS ipv6 ipv7 ipv8 ipv9 ->
+                                       let {
+                                         x3 :: GHC.Prim.Int# = GHC.Prim.-# wild y
+                                       } in
+                                       case case GHC.Prim.tagToEnum#
+                                                   @ GHC.Types.Bool
+                                                   (GHC.Prim.<=# x3 0#) of wild3 {
+                                              GHC.Types.False
+                                              -> Data.ByteString.Internal.PS
+                                                   ww
+                                                   ww1
+                                                   (GHC.Prim.+# ww2 y)
+                                                   x3
+                                              GHC.Types.True
+                                              -> Data.ByteString.empty } of x4 { Data.ByteString.Internal.PS ipv10 ipv11 ipv12 ipv13 ->
+                                       case GHC.Prim.touch#
+                                              @ 'GHC.Types.PtrRepLifted
+                                              @ GHC.ForeignPtr.ForeignPtrContents
+                                              ww5
+                                              ipv of s' { DEFAULT ->
+                                       case GHC.Prim.touch#
+                                              @ 'GHC.Types.PtrRepLifted
+                                              @ GHC.ForeignPtr.ForeignPtrContents
+                                              ww1
+                                              s' of s'1 { DEFAULT ->
+                                       (# s'1, (x1, x4, x2) #) } } } } } } }
+                                   } in
+                                   case GHC.Prim.tagToEnum#
+                                          @ GHC.Types.Bool
+                                          (GHC.Prim.<=# wild wild1) of wild2 {
+                                     GHC.Types.False -> $j wild1
+                                     GHC.Types.True -> $j wild }) of ds1 { (#,#) ipv ipv1 ->
+                           ipv1 }
+                        0#
+                        -> (Data.ByteString.empty,
+                            Data.ByteString.Internal.PS ww ww1 ww2 wild,
+                            Data.ByteString.empty) }
+                   0#
+                   -> (Data.ByteString.empty, Data.ByteString.empty,
+                       Data.ByteString.Internal.PS ww4 ww5 ww6 ww7) }) -}
+62d30aa9cfa0049763ef194748b7e17e
+  $wrunBuilder ::
+    GHC.Prim.Int#
+    -> (GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem
+        -> GHC.Types.IO
+             (GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem))
+    -> Data.ByteString.Internal.ByteString
+  {- Arity: 2, Strictness: <S,U><C(C(S(SL))),1*C1(C1(U(U,A)))>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem
+                           -> GHC.Types.IO
+                                (GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem)) ->
+                 case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.ByteString.Internal.ByteString
+                        (\ (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                         case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.<# ww 0#) of wild1 {
+                           GHC.Types.False
+                           -> case GHC.Prim.newPinnedByteArray#
+                                     @ GHC.Prim.RealWorld
+                                     ww
+                                     eta of ds { (#,#) ipv ipv1 ->
+                              let {
+                                ipv2 :: GHC.Prim.Addr#
+                                = GHC.Prim.byteArrayContents#
+                                    ipv1
+                                      `cast`
+                                    (UnsafeCo representational (GHC.Prim.MutableByteArray#
+                                                                  GHC.Prim.RealWorld) GHC.Prim.ByteArray#)
+                              } in
+                              case (ww1 (GHC.Ptr.Ptr @ GHC.Word.Word8 ipv2))
+                                     `cast`
+                                   (GHC.Types.N:IO[0]
+                                        <GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem>_R)
+                                     ipv of ds1 { (#,#) ipv3 ipv4 ->
+                              let {
+                                ipv5 :: GHC.ForeignPtr.ForeignPtrContents
+                                = GHC.ForeignPtr.PlainPtr ipv1
+                              } in
+                              case GHC.Prim.touch#
+                                     @ 'GHC.Types.PtrRepLifted
+                                     @ GHC.ForeignPtr.ForeignPtrContents
+                                     ipv5
+                                     ipv3 of s' { DEFAULT ->
+                              (# s', Data.ByteString.Internal.PS ipv2 ipv5 0# ww #) } } }
+                           GHC.Types.True
+                           -> case GHC.ForeignPtr.mallocPlainForeignPtrBytes2
+                              ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                        Data.ByteString.Internal.ByteString #)
+                              of {} }) of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+184be2e06d1b10ba452ded5170db3eb8
+  data Builder
+    = Builder {-# UNPACK #-}GHC.Types.Int
+              (GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem
+               -> GHC.Types.IO
+                    (GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem))
+ff1646aaf324aacc05edeb026668a023
+  type ByteStringElem = GHC.Word.Word8
+31615dfa27764a4f4a5ee8073e04663c
+  appendBuilder ::
+    Data.Trie.ByteStringInternal.Builder
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.ByteStringInternal.Builder
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SL),1*U(U,C(C1(U(U,1*U(U)))))><S(LLLS),1*U(U,U,U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Data.Trie.ByteStringInternal.Builder)
+                   (w1 :: Data.ByteString.Internal.ByteString) ->
+                 case w of ww { Data.Trie.ByteStringInternal.Builder ww1 ww2 ->
+                 case w1 of ww3 { Data.ByteString.Internal.PS ww4 ww5 ww6 ww7 ->
+                 Data.Trie.ByteStringInternal.Builder
+                   (GHC.Prim.+# ww1 ww7)
+                   (\ (p0 :: GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem)
+                      (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                    case (ww2 p0)
+                           `cast`
+                         (GHC.Types.N:IO[0]
+                              <GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem>_R)
+                           s of ds1 { (#,#) ipv ipv1 ->
+                    case ipv1 of ds { GHC.Ptr.Ptr ds2 ->
+                    case {__pkg_ccall bytestring-0.10.8.1@bytestring-0.10.8.1 memcpy GHC.Prim.Addr#
+                                                                                     -> GHC.Prim.Addr#
+                                                                                     -> GHC.Prim.Word#
+                                                                                     -> GHC.Prim.State#
+                                                                                          GHC.Prim.RealWorld
+                                                                                     -> (# GHC.Prim.State#
+                                                                                             GHC.Prim.RealWorld,
+                                                                                           GHC.Prim.Addr# #)}
+                           ds2
+                           (GHC.Prim.plusAddr# ww4 ww6)
+                           (GHC.Prim.int2Word# ww7)
+                           ipv of wild1 { (#,#) ds4 ds5 ->
+                    case GHC.Prim.touch#
+                           @ 'GHC.Types.PtrRepLifted
+                           @ GHC.ForeignPtr.ForeignPtrContents
+                           ww5
+                           ds4 of s' { DEFAULT ->
+                    (# s',
+                       GHC.Ptr.Ptr
+                         @ Data.Trie.ByteStringInternal.ByteStringElem
+                         (GHC.Prim.plusAddr# ds2 ww7) #) } } } })
+                     `cast`
+                   (<GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem>_R
+                    ->_R Sym (GHC.Types.N:IO[0]
+                                  <GHC.Ptr.Ptr
+                                     Data.Trie.ByteStringInternal.ByteStringElem>_R)) } }) -}
+3480132af55a6ee47a1eaa1b9927a15e
+  appendSnoc ::
+    Data.ByteString.Internal.ByteString
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.ByteStringInternal.ByteStringElem
+    -> Data.ByteString.Internal.ByteString
+  {- Arity: 3,
+     Strictness: <S(SLSS),1*U(U,U,U,U)><S(LLLS),1*U(U,U,U,U)><L,1*U(U)>,
+     Inline: INLINE (sat-args=3),
+     Unfolding: InlineRule (3, False, False)
+                (\ (ds :: Data.ByteString.Internal.ByteString)
+                   (ds1 :: Data.ByteString.Internal.ByteString)
+                   (w :: Data.Trie.ByteStringInternal.ByteStringElem) ->
+                 case ds of wild { Data.ByteString.Internal.PS dt dt1 dt2 dt3 ->
+                 let {
+                   s1 :: GHC.ForeignPtr.ForeignPtr GHC.Word.Word8
+                   = GHC.ForeignPtr.ForeignPtr @ GHC.Word.Word8 dt dt1
+                 } in
+                 let {
+                   off1 :: GHC.Types.Int = GHC.Types.I# dt2
+                 } in
+                 let {
+                   len1 :: GHC.Types.Int = GHC.Types.I# dt3
+                 } in
+                 case ds1 of wild1 { Data.ByteString.Internal.PS dt4 dt5 dt6 dt7 ->
+                 let {
+                   s2 :: GHC.ForeignPtr.ForeignPtr GHC.Word.Word8
+                   = GHC.ForeignPtr.ForeignPtr @ GHC.Word.Word8 dt4 dt5
+                 } in
+                 let {
+                   off2 :: GHC.Types.Int = GHC.Types.I# dt6
+                 } in
+                 let {
+                   len2 :: GHC.Types.Int = GHC.Types.I# dt7
+                 } in
+                 GHC.Base.$
+                   @ 'GHC.Types.PtrRepLifted
+                   @ (GHC.Ptr.Ptr GHC.Word.Word8 -> GHC.Types.IO ())
+                   @ Data.ByteString.Internal.ByteString
+                   (Data.ByteString.Internal.unsafeCreate
+                      (GHC.Num.$fNumInt_$c+
+                         (GHC.Num.$fNumInt_$c+ len1 len2)
+                         (GHC.Types.I# 1#)))
+                   (\ (p3 :: GHC.Ptr.Ptr GHC.Word.Word8) ->
+                    GHC.Base.thenIO
+                      @ ()
+                      @ ()
+                      (GHC.Base.$
+                         @ 'GHC.Types.PtrRepLifted
+                         @ (GHC.Ptr.Ptr GHC.Word.Word8 -> GHC.Types.IO ())
+                         @ (GHC.Types.IO ())
+                         (Foreign.ForeignPtr.Imp.withForeignPtr @ GHC.Word.Word8 @ () s1)
+                         (\ (p1 :: GHC.Ptr.Ptr GHC.Word.Word8) ->
+                          Data.ByteString.Internal.memcpy
+                            p3
+                            (GHC.Ptr.plusPtr @ GHC.Word.Word8 @ GHC.Word.Word8 p1 off1)
+                            (GHC.Base.id @ GHC.Types.Int len1)))
+                      (GHC.Base.thenIO
+                         @ ()
+                         @ ()
+                         (GHC.Base.$
+                            @ 'GHC.Types.PtrRepLifted
+                            @ (GHC.Ptr.Ptr GHC.Word.Word8 -> GHC.Types.IO ())
+                            @ (GHC.Types.IO ())
+                            (Foreign.ForeignPtr.Imp.withForeignPtr @ GHC.Word.Word8 @ () s2)
+                            (\ (p2 :: GHC.Ptr.Ptr GHC.Word.Word8) ->
+                             Data.ByteString.Internal.memcpy
+                               (GHC.Ptr.plusPtr @ GHC.Word.Word8 @ GHC.Word.Word8 p3 len1)
+                               (GHC.Ptr.plusPtr @ GHC.Word.Word8 @ GHC.Word.Word8 p2 off2)
+                               (GHC.Base.id @ GHC.Types.Int len2)))
+                         (Foreign.Storable.$fStorableWord8_$cpoke
+                            (GHC.Ptr.plusPtr
+                               @ GHC.Word.Word8
+                               @ Data.Trie.ByteStringInternal.ByteStringElem
+                               p3
+                               (GHC.Num.$fNumInt_$c+ len1 len2))
+                            w))) } }) -}
+13a392144f72e74533e51bc06ca38c06
+  breakMaximalPrefix ::
+    Data.ByteString.Internal.ByteString
+    -> Data.ByteString.Internal.ByteString
+    -> (Data.ByteString.Internal.ByteString,
+        Data.ByteString.Internal.ByteString,
+        Data.ByteString.Internal.ByteString)
+  {- Arity: 2, Strictness: <S(LLLS),1*U(U,U,U,U)><S,1*U(U,U,U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Data.ByteString.Internal.ByteString)
+                   (w1 :: Data.ByteString.Internal.ByteString) ->
+                 case w of ww { Data.ByteString.Internal.PS ww1 ww2 ww3 ww4 ->
+                 case w1 of ww5 { Data.ByteString.Internal.PS ww6 ww7 ww8 ww9 ->
+                 Data.Trie.ByteStringInternal.$wbreakMaximalPrefix
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww6
+                   ww7
+                   ww8
+                   ww9 } }) -}
+3d757cce276d1142baff5f9d845d101c
+  emptyBuilder :: Data.Trie.ByteStringInternal.Builder
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Data.Trie.ByteStringInternal.Builder
+                   0#
+                   (GHC.Base.returnIO1
+                      @ (GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem))
+                     `cast`
+                   (<GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem>_R
+                    ->_R Sym (GHC.Types.N:IO[0]
+                                  <GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem>_R))) -}
+008a91e1f683654ea2aee724e412d730
+  runBuilder ::
+    Data.Trie.ByteStringInternal.Builder
+    -> Data.ByteString.Internal.ByteString
+  {- Arity: 1, Strictness: <S(SC(C(S(SL)))),1*U(U,1*C1(C1(U(U,A))))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Data.Trie.ByteStringInternal.Builder) ->
+                 case w of ww { Data.Trie.ByteStringInternal.Builder ww1 ww2 ->
+                 Data.Trie.ByteStringInternal.$wrunBuilder ww1 ww2 }) -}
+6576ab1c79327e8e270a9f778362e73f
+  snocBuilder ::
+    Data.Trie.ByteStringInternal.Builder
+    -> Data.Trie.ByteStringInternal.ByteStringElem
+    -> Data.Trie.ByteStringInternal.Builder
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SL),1*U(U,C(C1(U(U,1*U(U)))))><L,U(U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Data.Trie.ByteStringInternal.Builder)
+                   (w1 :: Data.Trie.ByteStringInternal.ByteStringElem) ->
+                 case w of ww { Data.Trie.ByteStringInternal.Builder ww1 ww2 ->
+                 Data.Trie.ByteStringInternal.Builder
+                   (GHC.Prim.+# ww1 1#)
+                   (\ (p0 :: GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem)
+                      (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                    case (ww2 p0)
+                           `cast`
+                         (GHC.Types.N:IO[0]
+                              <GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem>_R)
+                           s of ds1 { (#,#) ipv ipv1 ->
+                    case ipv1 of wild { GHC.Ptr.Ptr a ->
+                    case w1 of wild2 { GHC.Word.W8# x ->
+                    case GHC.Prim.writeWord8OffAddr#
+                           @ GHC.Prim.RealWorld
+                           a
+                           0#
+                           x
+                           ipv of s2 { DEFAULT ->
+                    (# s2,
+                       GHC.Ptr.Ptr
+                         @ Data.Trie.ByteStringInternal.ByteStringElem
+                         (GHC.Prim.plusAddr# a 1#) #) } } } })
+                     `cast`
+                   (<GHC.Ptr.Ptr Data.Trie.ByteStringInternal.ByteStringElem>_R
+                    ->_R Sym (GHC.Types.N:IO[0]
+                                  <GHC.Ptr.Ptr
+                                     Data.Trie.ByteStringInternal.ByteStringElem>_R)) }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

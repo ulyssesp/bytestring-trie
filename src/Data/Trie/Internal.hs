@@ -68,9 +68,10 @@ import Data.Trie.BitTwiddle
 import Data.Binary
 
 import Data.Monoid         (Monoid(..))
-import Control.Monad       (liftM, liftM3, liftM4)
+import Control.Monad       (liftM, liftM2, liftM3, liftM4)
 #ifdef APPLICATIVE_IN_BASE
 import Control.Monad       (ap)
+import Data.Semigroup
 import Control.Applicative (Applicative(..), (<$>))
 import Data.Foldable       (Foldable(..))
 import Data.Traversable    (Traversable(traverse))
@@ -302,6 +303,9 @@ instance Monad Trie where
 
 
 -- This instance is more sensible than Data.IntMap and Data.Map's
+instance Semigroup a => Semigroup (Trie a) where
+    (<>) = liftM2 (<>)
+
 instance (Monoid a) => Monoid (Trie a) where
     mempty  = empty
     mappend = mergeBy $ \x y -> Just (x `mappend` y)

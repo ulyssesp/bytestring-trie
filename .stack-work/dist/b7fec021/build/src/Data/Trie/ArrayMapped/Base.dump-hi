@@ -1,0 +1,429 @@
+
+==================== FINAL INTERFACE ====================
+2018-07-20 18:15:23.9985629 UTC
+
+interface bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX:Data.Trie.ArrayMapped.Base 8001
+  interface hash: 2908802277e0cc611b2e6dc0cd977e22
+  ABI hash: a07e21b46fcc7a381de96af31a327ab4
+  export-list hash: aa756b2699d0c5beccfd2a1dcf830e76
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: ade1b42f4743b0ac4a11031255e22505
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.Trie.ArrayMapped.Base.delete
+  Data.Trie.ArrayMapped.Base.elems
+  Data.Trie.ArrayMapped.Base.fromList
+  Data.Trie.ArrayMapped.Base.insert
+  Data.Trie.ArrayMapped.Base.keys
+  Data.Trie.ArrayMapped.Base.lookup
+  Data.Trie.ArrayMapped.Base.member
+  Data.Trie.ArrayMapped.Base.toList
+  Data.Trie.ArrayMapped.Base.toListBy
+  Data.Trie.ArrayMapped.Base.unionL
+  Data.Trie.ArrayMapped.Base.unionR
+  Data.Trie.ArrayMapped.Internal.adjust
+  Data.Trie.ArrayMapped.Internal.alterBy
+  Data.Trie.ArrayMapped.Internal.empty
+  Data.Trie.ArrayMapped.Internal.filterMap
+  Data.Trie.ArrayMapped.Internal.lookupBy
+  Data.Trie.ArrayMapped.Internal.mapBy
+  Data.Trie.ArrayMapped.Internal.mergeBy
+  Data.Trie.ArrayMapped.Internal.null
+  Data.Trie.ArrayMapped.Internal.singleton
+  Data.Trie.ArrayMapped.Internal.size
+  Data.Trie.ArrayMapped.Internal.submap
+  Data.Trie.ArrayMapped.Internal.Trie
+module dependencies: Data.Trie.ArrayMapped.Errors
+                     Data.Trie.ArrayMapped.Internal Data.Trie.ArrayMapped.SparseArray
+                     Data.Trie.ByteStringInternal
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      data-or-1.0.0.5@data-or-1.0.0.5-7fP9a913JBX6EaOUN88kxz
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+import  -/  base-4.9.0.0:Control.Monad b6b2f076948b5e8acd6d95beb4d22bfc
+import  -/  base-4.9.0.0:Data.Foldable 3cbed01c922be29649c33015287c82ca
+import  -/  base-4.9.0.0:Data.Maybe 086a84053ef7f7810663b5f03b7ec3f7
+import  -/  base-4.9.0.0:Data.Tuple 84c2bcc75b7a239341ae2f88cce9d8d7
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString 94d879de7c0c4c728d40df2175a8ec14
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Internal c4a5d5c11e9c7b86fbb578dc42b94086
+import  -/  Data.Trie.ArrayMapped.Errors 77c8eb2f001298ddd3ea13f2d0b8a490
+  exports: 51fd118a97cd1adaea867cb590bf0c6c
+import  -/  Data.Trie.ArrayMapped.Internal f37abeb323f744e5387c76325eb06c6e
+  exports: 7af6de0b773440270fdc106cc5360efc
+  Trie 03bcb0def4d0999c581debeb0287d893
+  adjust 327adc7feaf50963d3bab412c1d968d3
+  alter 308af13d42d8c4904b051ff1d9a9b40f
+  alterBy acfb02b2fcfe5ff59bb3e7c86958a34b
+  empty 03bcb0def4d0999c581debeb0287d893
+  filterMap 4943f2a0ba638e1b7aca41d142e06c70
+  lookupBy 59d7dad9599fc09b9bd7055537c16e80
+  lookupBy_ 30aeb077719034a675c8e73c555aca5b
+  mapBy 172881b49fe31ff26515a7f4560459cb
+  mergeBy 839e559358da956ef0ba8cae5a663020
+  null debc067290ddb076190b6e2fa09b46eb
+  singleton 41a2be60bccb7ed3b71cd6eb340c1ffd
+  size 52453ef3a1dcd1be786f27344e3d44e5
+  submap c062451b1cdd9c8cef2e3d952bf5fec1
+f93793776ec5d617e4f4510eeb461e83
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Data.Trie.ArrayMapped.Base.$trModule2
+                   Data.Trie.ArrayMapped.Base.$trModule1) -}
+b2686689e5afd34a41f7739b0cd141ef
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Data.Trie.ArrayMapped.Base"#) -}
+2488aa3767b27a5ebc95bc7f76141231
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX"#) -}
+5bef289609c18e274992043ec4e54fff
+  delete ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 let {
+                   f :: GHC.Base.Maybe a -> GHC.Base.Maybe a {- Arity: 1 -}
+                   = \ (ds :: GHC.Base.Maybe a) -> GHC.Base.Nothing @ a
+                 } in
+                 Data.Trie.ArrayMapped.Internal.alterBy_
+                   @ a
+                   (\ (v :: a)
+                      (t :: Data.Trie.ArrayMapped.Internal.Trunk a)[OneShot] ->
+                    case f (GHC.Base.Just @ a v) of wild {
+                      GHC.Base.Nothing -> Data.Trie.ArrayMapped.Internal.$WReject @ a t
+                      GHC.Base.Just v1
+                      -> Data.Trie.ArrayMapped.Internal.$WAccept @ a v1 t })
+                   (\ (t :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    case f (GHC.Base.Nothing @ a) of wild {
+                      GHC.Base.Nothing -> Data.Trie.ArrayMapped.Internal.$WReject @ a t
+                      GHC.Base.Just v
+                      -> Data.Trie.ArrayMapped.Internal.$WAccept @ a v t })) -}
+da66562a1dcc438478352be4bdb81d18
+  elems :: Data.Trie.ArrayMapped.Internal.Trie a -> [a]
+  {- Strictness: b, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 case GHC.Err.error
+                        @ 'GHC.Types.PtrRepLifted
+                        @ ((Data.ByteString.Internal.ByteString -> a -> a)
+                           -> Data.Trie.ArrayMapped.Internal.Trie a -> [a])
+                        (GHC.Stack.Types.PushCallStack
+                           (GHC.Base.build
+                              @ GHC.Types.Char
+                              (\ @ b -> GHC.CString.unpackFoldrCString# @ b "error"#))
+                           (GHC.Stack.Types.SrcLoc
+                              (GHC.Base.build
+                                 @ GHC.Types.Char
+                                 (\ @ b ->
+                                  GHC.CString.unpackFoldrCString#
+                                    @ b
+                                    "bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX"#))
+                              (GHC.Base.build
+                                 @ GHC.Types.Char
+                                 (\ @ b ->
+                                  GHC.CString.unpackFoldrCString#
+                                    @ b
+                                    "Data.Trie.ArrayMapped.Base"#))
+                              (GHC.Base.build
+                                 @ GHC.Types.Char
+                                 (\ @ b ->
+                                  GHC.CString.unpackFoldrCString#
+                                    @ b
+                                    "src\\Data\\Trie\\ArrayMapped\\Base.hs"#))
+                              (GHC.Types.I# 81#)
+                              (GHC.Types.I# 12#)
+                              (GHC.Types.I# 81#)
+                              (GHC.Types.I# 34#))
+                           GHC.Stack.Types.EmptyCallStack)
+                          `cast`
+                        (Sym (GHC.Classes.N:IP[0]
+                                  <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                        (GHC.Base.build
+                           @ GHC.Types.Char
+                           (\ @ b -> GHC.CString.unpackFoldrCString# @ b "TODO: toListBy"#))
+                 ret_ty (Data.Trie.ArrayMapped.Internal.Trie a -> [a])
+                 of {}) -}
+7cb385b173ff14320644d4b6158e3549
+  fromList ::
+    [(Data.ByteString.Internal.ByteString, a)]
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 GHC.Base.foldr
+                   @ (Data.ByteString.Internal.ByteString, a)
+                   @ (Data.Trie.ArrayMapped.Internal.Trie a)
+                   (Data.Tuple.uncurry
+                      @ Data.ByteString.Internal.ByteString
+                      @ a
+                      @ (Data.Trie.ArrayMapped.Internal.Trie a
+                         -> Data.Trie.ArrayMapped.Internal.Trie a)
+                      (Data.Trie.ArrayMapped.Base.insert @ a))
+                   (Data.Trie.ArrayMapped.Internal.empty @ a)) -}
+50ac2c6979770b991cde57429a7f2193
+  insert ::
+    Data.ByteString.Internal.ByteString
+    -> a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ @ a (k :: Data.ByteString.Internal.ByteString) (v :: a) ->
+                 let {
+                   f :: GHC.Base.Maybe a -> GHC.Base.Maybe a {- Arity: 1 -}
+                   = \ (ds :: GHC.Base.Maybe a) -> GHC.Base.Just @ a v
+                 } in
+                 Data.Trie.ArrayMapped.Internal.alterBy_
+                   @ a
+                   (\ (v1 :: a)
+                      (t :: Data.Trie.ArrayMapped.Internal.Trunk a)[OneShot] ->
+                    case f (GHC.Base.Just @ a v1) of wild {
+                      GHC.Base.Nothing -> Data.Trie.ArrayMapped.Internal.$WReject @ a t
+                      GHC.Base.Just v2
+                      -> Data.Trie.ArrayMapped.Internal.$WAccept @ a v2 t })
+                   (\ (t :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    case f (GHC.Base.Nothing @ a) of wild {
+                      GHC.Base.Nothing -> Data.Trie.ArrayMapped.Internal.$WReject @ a t
+                      GHC.Base.Just v1
+                      -> Data.Trie.ArrayMapped.Internal.$WAccept @ a v1 t })
+                   k) -}
+cb419226e03a14ba1104833f46a33cc4
+  keys ::
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> [Data.ByteString.Internal.ByteString]
+  {- Strictness: b, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 case GHC.Err.error
+                        @ 'GHC.Types.PtrRepLifted
+                        @ ((Data.ByteString.Internal.ByteString
+                            -> a -> Data.ByteString.Internal.ByteString)
+                           -> Data.Trie.ArrayMapped.Internal.Trie a
+                           -> [Data.ByteString.Internal.ByteString])
+                        (GHC.Stack.Types.PushCallStack
+                           (GHC.Base.build
+                              @ GHC.Types.Char
+                              (\ @ b -> GHC.CString.unpackFoldrCString# @ b "error"#))
+                           (GHC.Stack.Types.SrcLoc
+                              (GHC.Base.build
+                                 @ GHC.Types.Char
+                                 (\ @ b ->
+                                  GHC.CString.unpackFoldrCString#
+                                    @ b
+                                    "bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX"#))
+                              (GHC.Base.build
+                                 @ GHC.Types.Char
+                                 (\ @ b ->
+                                  GHC.CString.unpackFoldrCString#
+                                    @ b
+                                    "Data.Trie.ArrayMapped.Base"#))
+                              (GHC.Base.build
+                                 @ GHC.Types.Char
+                                 (\ @ b ->
+                                  GHC.CString.unpackFoldrCString#
+                                    @ b
+                                    "src\\Data\\Trie\\ArrayMapped\\Base.hs"#))
+                              (GHC.Types.I# 81#)
+                              (GHC.Types.I# 12#)
+                              (GHC.Types.I# 81#)
+                              (GHC.Types.I# 34#))
+                           GHC.Stack.Types.EmptyCallStack)
+                          `cast`
+                        (Sym (GHC.Classes.N:IP[0]
+                                  <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                        (GHC.Base.build
+                           @ GHC.Types.Char
+                           (\ @ b -> GHC.CString.unpackFoldrCString# @ b "TODO: toListBy"#))
+                 ret_ty (Data.Trie.ArrayMapped.Internal.Trie a
+                         -> [Data.ByteString.Internal.ByteString])
+                 of {}) -}
+479e085c9003d5a4f3eb709c4196c9ff
+  lookup ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Base.Maybe a
+  {- Arity: 1, Strictness: <S(SLSS),1*U(U,U,U,U)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.ArrayMapped.Internal.lookupBy_
+                   @ a
+                   @ (GHC.Base.Maybe a)
+                   (\ (v :: a) (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    GHC.Base.Just @ a v)
+                   (\ (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    GHC.Base.Nothing @ a)) -}
+6613a9b3c8b8afbe29fd314c82e97beb
+  member ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S(SLSS),1*U(U,U,U,U)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.ArrayMapped.Internal.lookupBy_
+                   @ a
+                   @ GHC.Types.Bool
+                   (\ (ds :: a) (ds1 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    GHC.Types.True)
+                   (\ (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    GHC.Types.False)) -}
+33fb6bb18d4fdc3e5355bf2e0375e083
+  toList ::
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> [(Data.ByteString.Internal.ByteString, a)]
+  {- Strictness: b, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 case GHC.Err.error
+                        @ 'GHC.Types.PtrRepLifted
+                        @ ((Data.ByteString.Internal.ByteString
+                            -> a -> (Data.ByteString.Internal.ByteString, a))
+                           -> Data.Trie.ArrayMapped.Internal.Trie a
+                           -> [(Data.ByteString.Internal.ByteString, a)])
+                        (GHC.Stack.Types.PushCallStack
+                           (GHC.Base.build
+                              @ GHC.Types.Char
+                              (\ @ b -> GHC.CString.unpackFoldrCString# @ b "error"#))
+                           (GHC.Stack.Types.SrcLoc
+                              (GHC.Base.build
+                                 @ GHC.Types.Char
+                                 (\ @ b ->
+                                  GHC.CString.unpackFoldrCString#
+                                    @ b
+                                    "bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX"#))
+                              (GHC.Base.build
+                                 @ GHC.Types.Char
+                                 (\ @ b ->
+                                  GHC.CString.unpackFoldrCString#
+                                    @ b
+                                    "Data.Trie.ArrayMapped.Base"#))
+                              (GHC.Base.build
+                                 @ GHC.Types.Char
+                                 (\ @ b ->
+                                  GHC.CString.unpackFoldrCString#
+                                    @ b
+                                    "src\\Data\\Trie\\ArrayMapped\\Base.hs"#))
+                              (GHC.Types.I# 81#)
+                              (GHC.Types.I# 12#)
+                              (GHC.Types.I# 81#)
+                              (GHC.Types.I# 34#))
+                           GHC.Stack.Types.EmptyCallStack)
+                          `cast`
+                        (Sym (GHC.Classes.N:IP[0]
+                                  <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                        (GHC.Base.build
+                           @ GHC.Types.Char
+                           (\ @ b -> GHC.CString.unpackFoldrCString# @ b "TODO: toListBy"#))
+                 ret_ty (Data.Trie.ArrayMapped.Internal.Trie a
+                         -> [(Data.ByteString.Internal.ByteString, a)])
+                 of {}) -}
+02015fdc3730b2f7532e29b417d09030
+  toListBy ::
+    (Data.ByteString.Internal.ByteString -> a -> b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> [b]
+  {- Strictness: x, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a @ b ->
+                 GHC.Err.error
+                   @ 'GHC.Types.PtrRepLifted
+                   @ ((Data.ByteString.Internal.ByteString -> a -> b)
+                      -> Data.Trie.ArrayMapped.Internal.Trie a -> [b])
+                   (GHC.Stack.Types.PushCallStack
+                      (GHC.Base.build
+                         @ GHC.Types.Char
+                         (\ @ b1 -> GHC.CString.unpackFoldrCString# @ b1 "error"#))
+                      (GHC.Stack.Types.SrcLoc
+                         (GHC.Base.build
+                            @ GHC.Types.Char
+                            (\ @ b1 ->
+                             GHC.CString.unpackFoldrCString#
+                               @ b1
+                               "bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX"#))
+                         (GHC.Base.build
+                            @ GHC.Types.Char
+                            (\ @ b1 ->
+                             GHC.CString.unpackFoldrCString#
+                               @ b1
+                               "Data.Trie.ArrayMapped.Base"#))
+                         (GHC.Base.build
+                            @ GHC.Types.Char
+                            (\ @ b1 ->
+                             GHC.CString.unpackFoldrCString#
+                               @ b1
+                               "src\\Data\\Trie\\ArrayMapped\\Base.hs"#))
+                         (GHC.Types.I# 81#)
+                         (GHC.Types.I# 12#)
+                         (GHC.Types.I# 81#)
+                         (GHC.Types.I# 34#))
+                      GHC.Stack.Types.EmptyCallStack)
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   (GHC.Base.build
+                      @ GHC.Types.Char
+                      (\ @ b1 ->
+                       GHC.CString.unpackFoldrCString# @ b1 "TODO: toListBy"#))) -}
+262ab935982e5be02902e346f0e3d26d
+  unionL ::
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Strictness: b, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 case Data.Trie.ArrayMapped.Internal.mergeBy
+                 ret_ty (Data.Trie.ArrayMapped.Internal.Trie a
+                         -> Data.Trie.ArrayMapped.Internal.Trie a
+                         -> Data.Trie.ArrayMapped.Internal.Trie a)
+                 of {}) -}
+7e3c71048783cd6f8ce7b11e9a0ed6b5
+  unionR ::
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Strictness: b, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 case Data.Trie.ArrayMapped.Internal.mergeBy
+                 ret_ty (Data.Trie.ArrayMapped.Internal.Trie a
+                         -> Data.Trie.ArrayMapped.Internal.Trie a
+                         -> Data.Trie.ArrayMapped.Internal.Trie a)
+                 of {}) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

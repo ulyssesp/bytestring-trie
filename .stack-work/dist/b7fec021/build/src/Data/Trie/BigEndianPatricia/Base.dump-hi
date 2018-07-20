@@ -1,0 +1,420 @@
+
+==================== FINAL INTERFACE ====================
+2018-07-20 18:09:26.5110238 UTC
+
+interface bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX:Data.Trie.BigEndianPatricia.Base 8001
+  interface hash: 0773d6f797cc2d4928b0d4de255312ca
+  ABI hash: 2252f5f1b5079bd92c5ebf823d2e3ff2
+  export-list hash: c37b9b29a5ca940095451a0dd06cbfa6
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f8d1a78fb4025bf9b147a8b8d1c53caf
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.Trie.BigEndianPatricia.Base.adjust
+  Data.Trie.BigEndianPatricia.Base.delete
+  Data.Trie.BigEndianPatricia.Base.elems
+  Data.Trie.BigEndianPatricia.Base.fromList
+  Data.Trie.BigEndianPatricia.Base.insert
+  Data.Trie.BigEndianPatricia.Base.keys
+  Data.Trie.BigEndianPatricia.Base.lookup
+  Data.Trie.BigEndianPatricia.Base.lookupBy
+  Data.Trie.BigEndianPatricia.Base.match
+  Data.Trie.BigEndianPatricia.Base.matches
+  Data.Trie.BigEndianPatricia.Base.member
+  Data.Trie.BigEndianPatricia.Base.toList
+  Data.Trie.BigEndianPatricia.Base.unionL
+  Data.Trie.BigEndianPatricia.Base.unionR
+  Data.Trie.BigEndianPatricia.Internal.alterBy
+  Data.Trie.BigEndianPatricia.Internal.empty
+  Data.Trie.BigEndianPatricia.Internal.filterMap
+  Data.Trie.BigEndianPatricia.Internal.mapBy
+  Data.Trie.BigEndianPatricia.Internal.mergeBy
+  Data.Trie.BigEndianPatricia.Internal.null
+  Data.Trie.BigEndianPatricia.Internal.singleton
+  Data.Trie.BigEndianPatricia.Internal.size
+  Data.Trie.BigEndianPatricia.Internal.submap
+  Data.Trie.BigEndianPatricia.Internal.toListBy
+  Data.Trie.BigEndianPatricia.Internal.Trie
+module dependencies: Data.Trie.BigEndianPatricia.BitTwiddle
+                     Data.Trie.BigEndianPatricia.Errors
+                     Data.Trie.BigEndianPatricia.Internal Data.Trie.ByteStringInternal
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+import  -/  base-4.9.0.0:Control.Monad b6b2f076948b5e8acd6d95beb4d22bfc
+import  -/  base-4.9.0.0:Data.Foldable 3cbed01c922be29649c33015287c82ca
+import  -/  base-4.9.0.0:Data.Maybe 086a84053ef7f7810663b5f03b7ec3f7
+import  -/  base-4.9.0.0:Data.Tuple 84c2bcc75b7a239341ae2f88cce9d8d7
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString 94d879de7c0c4c728d40df2175a8ec14
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Internal c4a5d5c11e9c7b86fbb578dc42b94086
+import  -/  Data.Trie.BigEndianPatricia.Errors 97f76d49114e46c8aeca84cd65c1ecad
+  exports: 88301d29bfffdea8efa2041d99045397
+  impossible a2ca56abcbb57b8fb2d6fe7741c5d76a
+import  -/  Data.Trie.BigEndianPatricia.Internal f59b3bce4a1944305edd233cbf1f02b7
+  exports: 4b0053b84e77b5caaee3c9f9de90fe29
+  Trie a9cdd0b44d88c10f0755fad281dbeb54
+  adjustBy a093594aa7963620862cf753e8e384ba
+  alterBy cdef4ea33b31c9ec91ade277fd67181e
+  empty e863dc1f9e20e69577cf90d86008ae34
+  filterMap 8a40ae402420b8f62147afb6918022f3
+  lookupBy_ 45c240b0eaf31a2b8f585adec851ee1d
+  mapBy bcc77b33988824b21bc87f17e5554a14
+  match_ b33b574b941c14759f12dcd8c130c774
+  matches_ 0be1cca8e42612aa04d0c0753cceefe6
+  mergeBy a9cdd0b44d88c10f0755fad281dbeb54
+  null a81de30a53606e742c6102fdca292c0c
+  singleton a9cdd0b44d88c10f0755fad281dbeb54
+  size 4c30b28fdde7bc8838842550a9dfe794
+  submap 9c28f663f184c92f34e4fe19709f0fb0
+  toListBy 0e0a6c356846e37c886eb756ca4f4bf9
+41664858d126075249495f7421572d43
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Data.Trie.BigEndianPatricia.Base.$trModule2
+                   Data.Trie.BigEndianPatricia.Base.$trModule1) -}
+bdd23546cc454de779939734ee1e4f05
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "Data.Trie.BigEndianPatricia.Base"#) -}
+edeaad2eb1cdeb8da2c687930d07c222
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX"#) -}
+1d153a64afdeadfe684c9ee293cf1e11
+  adjust ::
+    (a -> a)
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+  {- Arity: 2, Strictness: <L,1*U><S(SLSS),1*U(U,U,U,U)>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ @ a (f :: a -> a) (q :: Data.ByteString.Internal.ByteString) ->
+                 Data.Trie.BigEndianPatricia.Internal.adjustBy
+                   @ a
+                   (\ (ds :: Data.ByteString.Internal.ByteString)[OneShot]
+                      (ds1 :: a)[OneShot] ->
+                    f)
+                   q
+                   (Data.Trie.BigEndianPatricia.Errors.impossible
+                      @ a
+                      (GHC.Base.build
+                         @ GHC.Types.Char
+                         (\ @ b -> GHC.CString.unpackFoldrCString# @ b "adjust"#)))) -}
+07542fe922462c819474c77a362a1f52
+  delete ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+  {- Arity: 1, Strictness: <S(SLSS),1*U(U,U,U,U)>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a (q :: Data.ByteString.Internal.ByteString) ->
+                 Data.Trie.BigEndianPatricia.Internal.alterBy
+                   @ a
+                   (\ (ds :: Data.ByteString.Internal.ByteString)
+                      (ds1 :: a)[OneShot]
+                      (ds2 :: GHC.Base.Maybe a)[OneShot] ->
+                    GHC.Base.Nothing @ a)
+                   q
+                   (Data.Trie.BigEndianPatricia.Errors.impossible
+                      @ a
+                      (GHC.Base.build
+                         @ GHC.Types.Char
+                         (\ @ b -> GHC.CString.unpackFoldrCString# @ b "delete"#)))) -}
+2a9a99cc6949e250f76f71afcc5117e8
+  elems :: Data.Trie.BigEndianPatricia.Internal.Trie a -> [a]
+  {- Arity: 1, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.BigEndianPatricia.Internal.toListBy
+                   @ a
+                   @ a
+                   (GHC.Base.flip
+                      @ a
+                      @ Data.ByteString.Internal.ByteString
+                      @ a
+                      (GHC.Base.const @ a @ Data.ByteString.Internal.ByteString))) -}
+ca8cef4457639af5a7cc508ddb9a042f
+  fromList ::
+    [(Data.ByteString.Internal.ByteString, a)]
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 GHC.Base.foldr
+                   @ (Data.ByteString.Internal.ByteString, a)
+                   @ (Data.Trie.BigEndianPatricia.Internal.Trie a)
+                   (Data.Tuple.uncurry
+                      @ Data.ByteString.Internal.ByteString
+                      @ a
+                      @ (Data.Trie.BigEndianPatricia.Internal.Trie a
+                         -> Data.Trie.BigEndianPatricia.Internal.Trie a)
+                      (Data.Trie.BigEndianPatricia.Base.insert @ a))
+                   (Data.Trie.BigEndianPatricia.Internal.Empty @ a)) -}
+2eeebc80002a65848863cd67d4cca154
+  insert ::
+    Data.ByteString.Internal.ByteString
+    -> a
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+  {- Arity: 2, Strictness: <S(SLSS),1*U(U,U,U,U)><L,U>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.BigEndianPatricia.Internal.alterBy
+                   @ a
+                   (\ (ds :: Data.ByteString.Internal.ByteString)
+                      (x :: a)
+                      (ds1 :: GHC.Base.Maybe a) ->
+                    GHC.Base.Just @ a x)) -}
+831c6cce023f33958da1049c300a4290
+  keys ::
+    Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> [Data.ByteString.Internal.ByteString]
+  {- Arity: 1, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.BigEndianPatricia.Internal.toListBy
+                   @ a
+                   @ Data.ByteString.Internal.ByteString
+                   (GHC.Base.const @ Data.ByteString.Internal.ByteString @ a)) -}
+38b61945368289104e27f343f8f6ef72
+  lookup ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a -> GHC.Base.Maybe a
+  {- Arity: 2, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.BigEndianPatricia.Internal.lookupBy_
+                   @ a
+                   @ (GHC.Base.Maybe a)
+                   (GHC.Base.const
+                      @ (GHC.Base.Maybe a)
+                      @ (Data.Trie.BigEndianPatricia.Internal.Trie a))
+                   (GHC.Base.Nothing @ a)
+                   (GHC.Base.const
+                      @ (GHC.Base.Maybe a)
+                      @ (Data.Trie.BigEndianPatricia.Internal.Trie a)
+                      (GHC.Base.Nothing @ a))) -}
+01b8858a9456818ee92f5b5e7a6c240f
+  lookupBy ::
+    (GHC.Base.Maybe a
+     -> Data.Trie.BigEndianPatricia.Internal.Trie a -> b)
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> b
+  {- Arity: 1, Strictness: <L,C(C(U))>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   @ b
+                   (f :: GHC.Base.Maybe a
+                         -> Data.Trie.BigEndianPatricia.Internal.Trie a -> b) ->
+                 Data.Trie.BigEndianPatricia.Internal.lookupBy_
+                   @ a
+                   @ b
+                   f
+                   (f (GHC.Base.Nothing @ a)
+                      (Data.Trie.BigEndianPatricia.Internal.Empty @ a))
+                   (f (GHC.Base.Nothing @ a))) -}
+e2fdf2be0b929b86b8d4102e82da80c5
+  match ::
+    Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> Data.ByteString.Internal.ByteString
+    -> GHC.Base.Maybe
+         (Data.ByteString.Internal.ByteString, a,
+          Data.ByteString.Internal.ByteString)
+  {- Arity: 2, Strictness: <S,1*U><L,U(U,U,U,U)>,
+     Unfolding: (\ @ a
+                   (t :: Data.Trie.BigEndianPatricia.Internal.Trie a)
+                   (q :: Data.ByteString.Internal.ByteString) ->
+                 case Data.Trie.BigEndianPatricia.Internal.match_ @ a t q of wild {
+                   GHC.Base.Nothing
+                   -> GHC.Base.Nothing
+                        @ (Data.ByteString.Internal.ByteString, a,
+                           Data.ByteString.Internal.ByteString)
+                   GHC.Base.Just ds
+                   -> case ds of wild1 { (,) n x ->
+                      case q of wild2 { Data.ByteString.Internal.PS dt dt1 dt2 dt3 ->
+                      case n of wild3 { GHC.Types.I# x1 ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<=# x1 0#) of wild4 {
+                        GHC.Types.False
+                        -> case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.>=# x1 dt3) of wild5 {
+                             GHC.Types.False
+                             -> GHC.Base.Just
+                                  @ (Data.ByteString.Internal.ByteString, a,
+                                     Data.ByteString.Internal.ByteString)
+                                  (Data.ByteString.Internal.PS dt dt1 dt2 x1, x,
+                                   Data.ByteString.Internal.PS
+                                     dt
+                                     dt1
+                                     (GHC.Prim.+# dt2 x1)
+                                     (GHC.Prim.-# dt3 x1))
+                             GHC.Types.True
+                             -> GHC.Base.Just
+                                  @ (Data.ByteString.Internal.ByteString, a,
+                                     Data.ByteString.Internal.ByteString)
+                                  (wild2, x, Data.ByteString.empty) }
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ (Data.ByteString.Internal.ByteString, a,
+                                Data.ByteString.Internal.ByteString)
+                             (Data.ByteString.empty, x, wild2) } } } } }) -}
+f4ce1179ede290a401faba7b1c9e8680
+  matches ::
+    Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> Data.ByteString.Internal.ByteString
+    -> [(Data.ByteString.Internal.ByteString, a,
+         Data.ByteString.Internal.ByteString)]
+  {- Arity: 2, Strictness: <S,1*U><L,U(U,U,U,U)>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ @ a
+                   (t :: Data.Trie.BigEndianPatricia.Internal.Trie a)
+                   (q :: Data.ByteString.Internal.ByteString) ->
+                 GHC.Base.build
+                   @ (Data.ByteString.Internal.ByteString, a,
+                      Data.ByteString.Internal.ByteString)
+                   (\ @ b1
+                      (c :: (Data.ByteString.Internal.ByteString, a,
+                             Data.ByteString.Internal.ByteString)
+                            -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    let {
+                      cons :: (GHC.Types.Int, a)
+                              -> (Data.ByteString.Internal.ByteString, a,
+                                  Data.ByteString.Internal.ByteString)
+                        {- Arity: 1 -}
+                      = \ (ds :: (GHC.Types.Int, a)) ->
+                        case ds of wild { (,) n1 x ->
+                        case q of wild1 { Data.ByteString.Internal.PS dt dt1 dt2 dt3 ->
+                        let {
+                          l :: GHC.Types.Int = GHC.Types.I# dt3
+                        } in
+                        case GHC.Classes.leInt n1 (GHC.Types.I# 0#) of wild2 {
+                          GHC.Types.False
+                          -> case GHC.Classes.geInt n1 l of wild3 {
+                               GHC.Types.False
+                               -> (case n1 of dt4 { GHC.Types.I# dt5 ->
+                                   Data.ByteString.Internal.PS dt dt1 dt2 dt5 },
+                                   x,
+                                   case GHC.Num.$fNumInt_$c+
+                                          (GHC.Types.I# dt2)
+                                          n1 of dt4 { GHC.Types.I# dt5 ->
+                                   case GHC.Num.$fNumInt_$c- l n1 of dt6 { GHC.Types.I# dt7 ->
+                                   Data.ByteString.Internal.PS dt dt1 dt5 dt7 } })
+                               GHC.Types.True -> (wild1, x, Data.ByteString.empty) }
+                          GHC.Types.True -> (Data.ByteString.empty, x, wild1) } } }
+                    } in
+                    Data.Trie.BigEndianPatricia.Internal.matchFB_
+                      @ a
+                      @ b1
+                      t
+                      q
+                      (\ (x :: GHC.Types.Int) (x1 :: a)[OneShot] (eta :: b1)[OneShot] ->
+                       GHC.Base.mapFB
+                         @ (Data.ByteString.Internal.ByteString, a,
+                            Data.ByteString.Internal.ByteString)
+                         @ b1
+                         @ (GHC.Types.Int, a)
+                         c
+                         cons
+                         (x, x1)
+                         eta)
+                      n)) -}
+858afcecedbf3ad7bfd69afd5845f924
+  member ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <L,U(U,U,U,U)><S,1*U>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (q :: Data.ByteString.Internal.ByteString)
+                   (eta :: Data.Trie.BigEndianPatricia.Internal.Trie a) ->
+                 Data.Maybe.isJust
+                   @ a
+                   (Data.Trie.BigEndianPatricia.Internal.lookupBy_
+                      @ a
+                      @ (GHC.Base.Maybe a)
+                      (GHC.Base.const
+                         @ (GHC.Base.Maybe a)
+                         @ (Data.Trie.BigEndianPatricia.Internal.Trie a))
+                      (GHC.Base.Nothing @ a)
+                      (GHC.Base.const
+                         @ (GHC.Base.Maybe a)
+                         @ (Data.Trie.BigEndianPatricia.Internal.Trie a)
+                         (GHC.Base.Nothing @ a))
+                      q
+                      eta)) -}
+4f242595a08228110d02bb3d35dc9684
+  toList ::
+    Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> [(Data.ByteString.Internal.ByteString, a)]
+  {- Arity: 1, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.BigEndianPatricia.Internal.toListBy
+                   @ a
+                   @ (Data.ByteString.Internal.ByteString, a)
+                   (GHC.Tuple.(,) @ Data.ByteString.Internal.ByteString @ a)) -}
+269b6c0dd537ffe0cca213b9f3a48411
+  unionL ::
+    Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+  {- Arity: 2, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.BigEndianPatricia.Internal.mergeBy
+                   @ a
+                   (\ (x :: a) (ds :: a) -> GHC.Base.Just @ a x)) -}
+2e9693c7ace6b273125d198837cc1e2d
+  unionR ::
+    Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+    -> Data.Trie.BigEndianPatricia.Internal.Trie a
+  {- Arity: 2, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.BigEndianPatricia.Internal.mergeBy
+                   @ a
+                   (\ (ds :: a) (y :: a) -> GHC.Base.Just @ a y)) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

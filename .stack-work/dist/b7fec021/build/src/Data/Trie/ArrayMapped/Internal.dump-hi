@@ -1,0 +1,3593 @@
+
+==================== FINAL INTERFACE ====================
+2018-07-20 18:15:21.8459246 UTC
+
+interface bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX:Data.Trie.ArrayMapped.Internal 8001
+  interface hash: c360d5f4cf73c22fe3d82d59e905d31b
+  ABI hash: f37abeb323f744e5387c76325eb06c6e
+  export-list hash: 7af6de0b773440270fdc106cc5360efc
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 289593c373273c11e65ea68114eb1df2
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.Trie.ArrayMapped.Internal.adjust
+  Data.Trie.ArrayMapped.Internal.adjust'
+  Data.Trie.ArrayMapped.Internal.alter
+  Data.Trie.ArrayMapped.Internal.alterBy
+  Data.Trie.ArrayMapped.Internal.alterBy_
+  Data.Trie.ArrayMapped.Internal.assocsBy
+  Data.Trie.ArrayMapped.Internal.contextualFilterMap
+  Data.Trie.ArrayMapped.Internal.contextualMap
+  Data.Trie.ArrayMapped.Internal.contextualMap'
+  Data.Trie.ArrayMapped.Internal.contextualMapBy
+  Data.Trie.ArrayMapped.Internal.empty
+  Data.Trie.ArrayMapped.Internal.filterMap
+  Data.Trie.ArrayMapped.Internal.foldrWithKey
+  Data.Trie.ArrayMapped.Internal.foldrWithKey'
+  Data.Trie.ArrayMapped.Internal.lookup
+  Data.Trie.ArrayMapped.Internal.lookupBy
+  Data.Trie.ArrayMapped.Internal.lookupBy_
+  Data.Trie.ArrayMapped.Internal.mapBy
+  Data.Trie.ArrayMapped.Internal.match_
+  Data.Trie.ArrayMapped.Internal.member
+  Data.Trie.ArrayMapped.Internal.mergeBy
+  Data.Trie.ArrayMapped.Internal.minAssoc
+  Data.Trie.ArrayMapped.Internal.null
+  Data.Trie.ArrayMapped.Internal.singleton
+  Data.Trie.ArrayMapped.Internal.size
+  Data.Trie.ArrayMapped.Internal.submap
+  Data.Trie.ArrayMapped.Internal.subtrie
+  Data.Trie.ArrayMapped.Internal.Trie
+module dependencies: Data.Trie.ArrayMapped.Errors
+                     Data.Trie.ArrayMapped.SparseArray Data.Trie.ByteStringInternal
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      data-or-1.0.0.5@data-or-1.0.0.5-7fP9a913JBX6EaOUN88kxz
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+import  -/  base-4.9.0.0:Control.Monad b6b2f076948b5e8acd6d95beb4d22bfc
+import  -/  base-4.9.0.0:Data.Foldable 3cbed01c922be29649c33015287c82ca
+import  -/  base-4.9.0.0:Data.Functor 67cebb006c069ea73adcd2d468cdb0dc
+import  -/  base-4.9.0.0:Data.Maybe 086a84053ef7f7810663b5f03b7ec3f7
+import  -/  base-4.9.0.0:Data.Monoid 6756b44c170e445e254f1a1c3e59ccfa
+import  -/  base-4.9.0.0:Data.Semigroup 4aef0ef9e6e6826b7d625ca18dc999aa
+import  -/  base-4.9.0.0:Data.Traversable 578f976513fd28b7f58c156ea20c192a
+import  -/  base-4.9.0.0:Data.Typeable 589d8ab7d073c81d7ef5f949fd3eb448
+import  -/  base-4.9.0.0:Data.Typeable.Internal af418ce9ba51b5262399b6fc69c77235
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.0.0:GHC.Exts 8dde1ef8f2283d1c13b06a4e51aded72
+import  -/  base-4.9.0.0:GHC.Num f0aed3315b3ed1b330b71fc4148a5581
+import  -/  base-4.9.0.0:GHC.Show 0b5845243cb2ec62b57dd6963d276ec6
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  binary-0.8.3.0@binary-0.8.3.0:Data.Binary 6874ec1640b9c9e26e0b523287f2c847
+import  -/  binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Class 8597f8b1c2ab4e12727292e0fd7fcc19
+import  -/  binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Get.Internal 2e7605525151d1d4905dbc0c729d189c
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString 94d879de7c0c4c728d40df2175a8ec14
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Internal c4a5d5c11e9c7b86fbb578dc42b94086
+import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Unsafe 20a7685d944e28d4d4ad998d75246ab8
+import  -/  Data.Trie.ArrayMapped.Errors 77c8eb2f001298ddd3ea13f2d0b8a490
+  exports: 51fd118a97cd1adaea867cb590bf0c6c
+  impossible c4c43214bd6e753d02b0d37b1df646e2
+import  -/  Data.Trie.ArrayMapped.SparseArray d03e14eb354c4dab7a5cd4b32a5f4d5a
+  exports: cf846ce28b31bf9094791820cdefe9f4
+  IsEmpty 4712b20b508eac143469991aed65b103
+  IsSingleton da501188da91688f3407337879234b22
+  SparseArray c48038d4f7bb9c300e9cddc90e0c39f8
+  adjustK 4cbbef01f0305e58147a6e80faf8bca6
+  adjustK' 8b99ea630486768977e3e8253bf10446
+  assocs 64442efc813f4c90063cbf1ccc0bc0f1
+  delete d9b498f49623c06751a7e0efc2e0b759
+  doubleton 9dccdabd4364d42313db01d9a5e8c5d0
+  empty 9072c30abab9be4e42631449e296e602
+  filterMap 236cfc07e7d353c364d82b97324be35e
+  foldrWithKey' 9d907866fbece0cf343832e8f98ca341
+  insert a4b0ae033b402de700bd0790e3a0573d
+  insert' eec8bcf08664b595b630faebc2385f74
+  lookup 21bdfc8c75d69ec78962eb3c53dcfe73
+  map' c48038d4f7bb9c300e9cddc90e0c39f8
+  rzipFilter_ facf7d6382f925e1c2a4bca2a4ade9f4
+  rzipWith'_ c682084a4b215e46e74b940f358b6f1f
+  rzipWith_ 1c92696b393a118fa6bdabec5f611b3b
+  singleton 00ef93cda671862d0fa3d07b6c5c9947
+  unionWith_ 6c1816caf9f106616b15a5b6f8f2accc
+  viewSubsingleton 3eaf97b0595cf90c6b9224f46963bb30
+import  -/  Data.Trie.ByteStringInternal bf2bb815b22e2d3f05bd812f82c519b8
+  exports: d460a1523e9dff7fa14b4e8b29362579
+  appendSnoc 3480132af55a6ee47a1eaa1b9927a15e
+  breakMaximalPrefix 13a392144f72e74533e51bc06ca38c06
+import  -/  deepseq-1.4.2.0@deepseq-1.4.2.0:Control.DeepSeq 7523df5398c1a772ea4aefea3d519d92
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+addDependentFile "C:\Users\ulyssesp\AppData\Local\Programs\stack\x86_64-windows\ghc-8.0.1\lib\include\ghcversion.h"
+addDependentFile ".stack-work\dist\b7fec021\build\autogen\cabal_macros.h"
+03bcb0def4d0999c581debeb0287d893
+  $fBinaryTrie ::
+    Data.Binary.Class.Binary a =>
+    Data.Binary.Class.Binary (Data.Trie.ArrayMapped.Internal.Trie a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(U(A,U)),U,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dBinary :: Data.Binary.Class.Binary a).
+                  @ (Data.Trie.ArrayMapped.Internal.Trie a)
+                  (Data.Trie.ArrayMapped.Internal.$fBinaryTrie_$cput @ a $dBinary)
+                  (Data.Trie.ArrayMapped.Internal.$fBinaryTrie_$cget @ a $dBinary)
+                  (Data.Trie.ArrayMapped.Internal.$fBinaryTrie_$cputList
+                     @ a
+                     $dBinary) -}
+03bcb0def4d0999c581debeb0287d893
+  $fBinaryTrie1 ::
+    Data.Binary.Class.Binary a =>
+    forall r.
+    Data.ByteString.Internal.ByteString
+    -> Data.Binary.Get.Internal.Success
+         (Data.Trie.ArrayMapped.Internal.Trie a) r
+    -> Data.Binary.Get.Internal.Decoder r
+  {- Arity: 3,
+     Strictness: <L,U(C(U(A,U)),U,A)><S(LLLS),1*U(U,U,U,U)><L,C(C1(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: Data.Binary.Class.Binary a)
+                   @ r
+                   (w1 :: Data.ByteString.Internal.ByteString)
+                   (w2 :: Data.Binary.Get.Internal.Success
+                            (Data.Trie.ArrayMapped.Internal.Trie a) r) ->
+                 case w1 of ww { Data.ByteString.Internal.PS ww1 ww2 ww3 ww4 ->
+                 Data.Trie.ArrayMapped.Internal.$w$cget
+                   @ a
+                   w
+                   @ r
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   w2 }) -}
+4040ed97b33638025e4b76fbdeaaabc3
+  $fBinaryTrie2 ::
+    [Data.ByteString.Internal.ByteString]
+    -> forall r1.
+       Data.ByteString.Internal.ByteString
+       -> Data.Binary.Get.Internal.Success
+            Data.ByteString.Internal.ByteString r1
+       -> Data.Binary.Get.Internal.Decoder r1
+  {- Arity: 3,
+     Unfolding: (\ (bss :: [Data.ByteString.Internal.ByteString])
+                   @ r1
+                   (ds :: Data.ByteString.Internal.ByteString)[OneShot]
+                   (ds1 :: Data.Binary.Get.Internal.Success
+                             Data.ByteString.Internal.ByteString r1)[OneShot] ->
+                 case Data.ByteString.Internal.$fMonoidByteString_$cmconcat
+                        bss of dt4 { Data.ByteString.Internal.PS ipv1 ipv2 ipv3 ipv4 ->
+                 Data.Binary.Get.Internal.Fail
+                   @ r1
+                   dt4
+                   Data.Trie.ArrayMapped.Internal.$fBinaryTrie3 }) -}
+a8adb11417e8e2f01a42f38e9302daa9
+  $fBinaryTrie3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "not enough bytes"#) -}
+f233522252ffb736b275785a3058e6b3
+  $fBinaryTrie4 ::
+    GHC.Types.Int
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Either.Either
+         GHC.Types.Int
+         (Data.ByteString.Internal.ByteString,
+          Data.ByteString.Internal.ByteString)
+  {- Arity: 2,
+     Unfolding: (\ (n2 :: GHC.Types.Int)
+                   (str1 :: Data.ByteString.Internal.ByteString)[OneShot] ->
+                 case str1 of wild2 { Data.ByteString.Internal.PS dt4 dt5 dt6 dt7 ->
+                 case n2 of wild3 { GHC.Types.I# y ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# dt7 y) of wild4 {
+                   GHC.Types.False
+                   -> Data.Either.Left
+                        @ GHC.Types.Int
+                        @ (Data.ByteString.Internal.ByteString,
+                           Data.ByteString.Internal.ByteString)
+                        (GHC.Types.I# (GHC.Prim.-# y dt7))
+                   GHC.Types.True
+                   -> Data.Either.Right
+                        @ GHC.Types.Int
+                        @ (Data.ByteString.Internal.ByteString,
+                           Data.ByteString.Internal.ByteString)
+                        (wild2, Data.ByteString.empty) } } }) -}
+d6df8a191a44f6ce2f49a6876cecf970
+  $fBinaryTrie5 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+03bcb0def4d0999c581debeb0287d893
+  $fBinaryTrie_$cget ::
+    Data.Binary.Class.Binary a =>
+    Data.Binary.Get.Internal.Get
+      (Data.Trie.ArrayMapped.Internal.Trie a)
+  {- Arity: 3,
+     Strictness: <L,U(C(U(A,U)),U,A)><S(LLLS),1*U(U,U,U,U)><L,C(C1(U))>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Trie.ArrayMapped.Internal.$fBinaryTrie1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Data.Binary.Class.Binary a>_R
+                 ->_R Sym (Data.Binary.Get.Internal.N:Get[0]
+                               <Data.Trie.ArrayMapped.Internal.Trie a>_R)) -}
+a872b439be10c608ce74d93bff9da351
+  $fBinaryTrie_$cget1 ::
+    Data.Binary.Class.Binary a =>
+    Data.Binary.Get.Internal.Get
+      (Data.Trie.ArrayMapped.Internal.Trunk a)
+  {- Arity: 1, Strictness: <L,U(C(U(A,U)),U,A)> -}
+03bcb0def4d0999c581debeb0287d893
+  $fBinaryTrie_$cput ::
+    Data.Binary.Class.Binary a =>
+    Data.Trie.ArrayMapped.Internal.Trie a -> Data.Binary.Put.Put
+  {- Arity: 2, Strictness: <L,U(C(U(A,U)),U,A)><S,1*U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   (w :: Data.Binary.Class.Binary a)
+                   (w1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case Data.Trie.ArrayMapped.Internal.$w$cput
+                        @ a
+                        w
+                        w1 of ww { (#,#) ww1 ww2 ->
+                 (Data.Binary.Put.PairS @ () ww1 ww2)
+                   `cast`
+                 (Sym (Data.Binary.Put.N:PutM[0]) <()>_N) }) -}
+a872b439be10c608ce74d93bff9da351
+  $fBinaryTrie_$cput1 ::
+    Data.Binary.Class.Binary a =>
+    Data.Trie.ArrayMapped.Internal.Trunk a -> Data.Binary.Put.Put
+  {- Arity: 1, Strictness: <L,U(C(U(A,U)),U,A)> -}
+03bcb0def4d0999c581debeb0287d893
+  $fBinaryTrie_$cputList ::
+    Data.Binary.Class.Binary a =>
+    [Data.Trie.ArrayMapped.Internal.Trie a] -> Data.Binary.Put.Put
+  {- Arity: 1, Strictness: <L,U(C(U(A,U)),U,A)> -}
+a872b439be10c608ce74d93bff9da351
+  $fBinaryTrunk ::
+    Data.Binary.Class.Binary a =>
+    Data.Binary.Class.Binary (Data.Trie.ArrayMapped.Internal.Trunk a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(U(A,U)),U,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dBinary :: Data.Binary.Class.Binary a).
+                  @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                  (Data.Trie.ArrayMapped.Internal.$fBinaryTrie_$cput1 @ a $dBinary)
+                  (Data.Trie.ArrayMapped.Internal.$fBinaryTrie_$cget1 @ a $dBinary)
+                  (Data.Trie.ArrayMapped.Internal.$fBinaryTrunk_$cputList
+                     @ a
+                     $dBinary) -}
+a872b439be10c608ce74d93bff9da351
+  $fBinaryTrunk_$cputList ::
+    Data.Binary.Class.Binary a =>
+    [Data.Trie.ArrayMapped.Internal.Trunk a] -> Data.Binary.Put.Put
+  {- Arity: 1, Strictness: <L,U(C(U(A,U)),U,A)> -}
+03bcb0def4d0999c581debeb0287d893
+  $fEqTrie ::
+    GHC.Classes.Eq a =>
+    GHC.Classes.Eq (Data.Trie.ArrayMapped.Internal.Trie a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dEq :: GHC.Classes.Eq a).
+                  @ (Data.Trie.ArrayMapped.Internal.Trie a)
+                  (Data.Trie.ArrayMapped.Internal.$fEqTrie_$c== @ a $dEq)
+                  (Data.Trie.ArrayMapped.Internal.$fEqTrie_$c/= @ a $dEq) -}
+03bcb0def4d0999c581debeb0287d893
+  $fEqTrie_$c/= ::
+    GHC.Classes.Eq a =>
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dEq :: GHC.Classes.Eq a)
+                   (a1 :: Data.Trie.ArrayMapped.Internal.Trie a)
+                   (b :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case Data.Trie.ArrayMapped.Internal.$fEqTrie_$c==
+                        @ a
+                        $dEq
+                        a1
+                        b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fEqTrie_$c== ::
+    GHC.Classes.Eq a =>
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U>,
+     Unfolding: (\ @ a
+                   ($dEq :: GHC.Classes.Eq a)
+                   (ds :: Data.Trie.ArrayMapped.Internal.Trie a)
+                   (ds1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case ds of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept a1 a2
+                   -> case ds1 of wild1 {
+                        Data.Trie.ArrayMapped.Internal.Accept b1 b2
+                        -> case GHC.Classes.== @ a $dEq a1 b1 of wild2 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> Data.Trie.ArrayMapped.Internal.$fEqTrie_$c==1 @ a $dEq a2 b2 }
+                        Data.Trie.ArrayMapped.Internal.Reject ipv -> GHC.Types.False }
+                   Data.Trie.ArrayMapped.Internal.Reject a1
+                   -> case ds1 of wild1 {
+                        Data.Trie.ArrayMapped.Internal.Accept ipv ipv1 -> GHC.Types.False
+                        Data.Trie.ArrayMapped.Internal.Reject b1
+                        -> Data.Trie.ArrayMapped.Internal.$fEqTrie_$c==1
+                             @ a
+                             $dEq
+                             a1
+                             b1 } }) -}
+a872b439be10c608ce74d93bff9da351
+  $fEqTrie_$c==1 ::
+    GHC.Classes.Eq a =>
+    Data.Trie.ArrayMapped.Internal.Trunk a
+    -> Data.Trie.ArrayMapped.Internal.Trunk a -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)> -}
+a872b439be10c608ce74d93bff9da351
+  $fEqTrunk ::
+    GHC.Classes.Eq a =>
+    GHC.Classes.Eq (Data.Trie.ArrayMapped.Internal.Trunk a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dEq :: GHC.Classes.Eq a).
+                  @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                  (Data.Trie.ArrayMapped.Internal.$fEqTrie_$c==1 @ a $dEq)
+                  (Data.Trie.ArrayMapped.Internal.$fEqTrunk_$c/= @ a $dEq) -}
+a872b439be10c608ce74d93bff9da351
+  $fEqTrunk_$c/= ::
+    GHC.Classes.Eq a =>
+    Data.Trie.ArrayMapped.Internal.Trunk a
+    -> Data.Trie.ArrayMapped.Internal.Trunk a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)><L,U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dEq :: GHC.Classes.Eq a)
+                   (a1 :: Data.Trie.ArrayMapped.Internal.Trunk a)
+                   (b :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 case Data.Trie.ArrayMapped.Internal.$fEqTrie_$c==1
+                        @ a
+                        $dEq
+                        a1
+                        b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie ::
+    Data.Foldable.Foldable Data.Trie.ArrayMapped.Internal.Trie
+  DFunId
+  {- Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.Trie.ArrayMapped.Internal.Trie
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfold
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap1
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldr
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldr'
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldl
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldl'
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldr1
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldl1
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$ctoList
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cnull
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$clength
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$celem
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cmaximum
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cminimum
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$csum
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cproduct -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie1 ::
+    GHC.Num.Num a =>
+    Data.Trie.ArrayMapped.Internal.Trie a -> Data.Monoid.Product a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(A,A,U,A,A,A,C(U))>,
+     Unfolding: (\ @ a ($dNum :: GHC.Num.Num a) ->
+                 let {
+                   $dMonoid :: GHC.Base.Monoid (Data.Monoid.Product a)
+                   = Data.Monoid.$fMonoidProduct @ a $dNum
+                 } in
+                 \ (ds :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case ds of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> (GHC.Num.*
+                         @ a
+                         $dNum
+                         v
+                         (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                            @ (Data.Monoid.Product a)
+                            @ a
+                            $dMonoid
+                            (Data.Trie.ArrayMapped.Internal.$fFoldableTrie2 @ a)
+                              `cast`
+                            (<a>_R ->_R Sym (Data.Monoid.N:Product[0] <a>_R))
+                            t)
+                           `cast`
+                         (Data.Monoid.N:Product[0] <a>_R))
+                        `cast`
+                      (Sym (Data.Monoid.N:Product[0] <a>_R))
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                        @ (Data.Monoid.Product a)
+                        @ a
+                        $dMonoid
+                        (Data.Trie.ArrayMapped.Internal.$fFoldableTrie2 @ a)
+                          `cast`
+                        (<a>_R ->_R Sym (Data.Monoid.N:Product[0] <a>_R))
+                        t }) -}
+acdf808438bd255f524f72f9658bbca7
+  $fFoldableTrie10 :: a
+  {- Strictness: x -}
+7421468fff3701f0a8ef5847e4418ba7
+  $fFoldableTrie2 :: a -> a
+  {- Arity: 1, HasNoCafRefs, Unfolding: (\ @ a (tpl :: a) -> tpl) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie3 ::
+    GHC.Num.Num a =>
+    Data.Trie.ArrayMapped.Internal.Trie a -> Data.Monoid.Sum a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U,A,A,A,A,A,C(U))>,
+     Unfolding: (\ @ a ($dNum :: GHC.Num.Num a) ->
+                 let {
+                   $dMonoid :: GHC.Base.Monoid (Data.Monoid.Sum a)
+                   = Data.Monoid.$fMonoidSum @ a $dNum
+                 } in
+                 \ (ds :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case ds of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> (GHC.Num.+
+                         @ a
+                         $dNum
+                         v
+                         (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                            @ (Data.Monoid.Sum a)
+                            @ a
+                            $dMonoid
+                            (Data.Trie.ArrayMapped.Internal.$fFoldableTrie2 @ a)
+                              `cast`
+                            (<a>_R ->_R Sym (Data.Monoid.N:Sum[0] <a>_R))
+                            t)
+                           `cast`
+                         (Data.Monoid.N:Sum[0] <a>_R))
+                        `cast`
+                      (Sym (Data.Monoid.N:Sum[0] <a>_R))
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                        @ (Data.Monoid.Sum a)
+                        @ a
+                        $dMonoid
+                        (Data.Trie.ArrayMapped.Internal.$fFoldableTrie2 @ a)
+                          `cast`
+                        (<a>_R ->_R Sym (Data.Monoid.N:Sum[0] <a>_R))
+                        t }) -}
+3ef92fb94d72dfe0a9625c96b2abfd7d
+  $fFoldableTrie4 :: a
+  {- Strictness: x -}
+3d0becb832b3cf9023ea3e7edd2409aa
+  $fFoldableTrie5 :: a
+  {- Strictness: x -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie6 ::
+    GHC.Classes.Eq a =>
+    a -> Data.Trie.ArrayMapped.Internal.Trie a -> Data.Monoid.Any
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(1*C1(C(U)),A)><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dEq :: GHC.Classes.Eq a) (eta :: a) ->
+                 Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap1
+                   @ Data.Monoid.Any
+                   @ a
+                   Data.Monoid.$fMonoidAny
+                   (GHC.Classes.== @ a $dEq eta)
+                     `cast`
+                   (<a>_R ->_R Sym (Data.Monoid.N:Any[0]))) -}
+b2bb926725e8990275a73d8dfe516a2e
+  $fFoldableTrie7 :: GHC.Types.Int -> a -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><L,A>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a (c :: GHC.Types.Int) (ds :: a) ->
+                 case c of wild { GHC.Types.I# x ->
+                 GHC.Types.I# (GHC.Prim.+# x 1#) }) -}
+f0466d382f257469ff80f2e20e659987
+  $fFoldableTrie8 :: a
+  {- Strictness: x -}
+5003480de47a13d9d45be9b451461571
+  $fFoldableTrie9 ::
+    GHC.Base.Monoid (Data.Monoid.Dual (Data.Monoid.Endo b))
+  {- Unfolding: (\ @ b ->
+                 Data.Monoid.$fMonoidDual
+                   @ (Data.Monoid.Endo b)
+                   (Data.Monoid.$fMonoidEndo @ b)) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$celem ::
+    GHC.Classes.Eq a =>
+    a -> Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(1*C1(C(U)),A)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Trie.ArrayMapped.Internal.$fFoldableTrie6
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Classes.Eq a>_R
+                 ->_R <a>_R
+                 ->_R <Data.Trie.ArrayMapped.Internal.Trie a>_R
+                 ->_R Data.Monoid.N:Any[0]) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cfold ::
+    GHC.Base.Monoid m => Data.Trie.ArrayMapped.Internal.Trie m -> m
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U(U,U,A)><S,1*U>,
+     Unfolding: (\ @ m
+                   ($dMonoid :: GHC.Base.Monoid m)
+                   (ds :: Data.Trie.ArrayMapped.Internal.Trie m) ->
+                 case ds of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> GHC.Base.mappend
+                        @ m
+                        $dMonoid
+                        v
+                        (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                           @ m
+                           @ m
+                           $dMonoid
+                           (GHC.Base.id @ m)
+                           t)
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                        @ m
+                        @ m
+                        $dMonoid
+                        (GHC.Base.id @ m)
+                        t }) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrie_$cfoldMap ::
+    GHC.Base.Monoid m =>
+    (a -> m) -> Data.Trie.ArrayMapped.Internal.Trunk a -> m
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,U(U,U,A)><L,C(U)><S,1*U>,
+     Unfolding: (\ @ m
+                   @ a
+                   ($dMonoid :: GHC.Base.Monoid m)
+                   (f :: a -> m)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 let {
+                   lvl39 :: m = GHC.Base.mempty @ m $dMonoid
+                 } in
+                 let {
+                   f1 :: m -> m -> m = GHC.Base.mappend @ m $dMonoid
+                 } in
+                 let {
+                   lvl40 :: a -> m -> m {- Arity: 1 -} = \ (x :: a) -> f1 (f x)
+                 } in
+                 let {
+                   f2 :: m -> m -> m = GHC.Base.mappend @ m $dMonoid
+                 } in
+                 letrec {
+                   lvl41 :: Data.Trie.ArrayMapped.Internal.Trunk a -> m -> m
+                     {- Arity: 1 -}
+                   = \ (x :: Data.Trie.ArrayMapped.Internal.Trunk a) -> f2 (go x)
+                   go :: Data.Trie.ArrayMapped.Internal.Trunk a -> m
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                     case ds of wild {
+                       Data.Trie.ArrayMapped.Internal.Empty -> lvl39
+                       Data.Trie.ArrayMapped.Internal.Arc dt dt1 dt2 dt3 v t
+                       -> GHC.Base.mappend @ m $dMonoid (f v) (go t)
+                       Data.Trie.ArrayMapped.Internal.Branch dt dt1 dt2 dt3 dt4 dt5 dt6 dt7
+                       -> GHC.Base.mappend
+                            @ m
+                            $dMonoid
+                            (Data.Trie.ArrayMapped.SparseArray.$w$cfoldr'
+                               @ a
+                               @ m
+                               lvl40
+                               lvl39
+                               dt4
+                               dt5)
+                            (Data.Trie.ArrayMapped.SparseArray.$w$cfoldr'
+                               @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                               @ m
+                               lvl41
+                               lvl39
+                               dt6
+                               dt7) }
+                 } in
+                 go eta) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cfoldMap1 ::
+    GHC.Base.Monoid m =>
+    (a -> m) -> Data.Trie.ArrayMapped.Internal.Trie a -> m
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,U(U,U,A)><L,C(U)><S,1*U>,
+     Unfolding: (\ @ m
+                   @ a
+                   ($dMonoid :: GHC.Base.Monoid m)
+                   (f :: a -> m)
+                   (ds :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case ds of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> GHC.Base.mappend
+                        @ m
+                        $dMonoid
+                        (f v)
+                        (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                           @ m
+                           @ a
+                           $dMonoid
+                           f
+                           t)
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                        @ m
+                        @ a
+                        $dMonoid
+                        f
+                        t }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cfoldl ::
+    (b -> a -> b) -> b -> Data.Trie.ArrayMapped.Internal.Trie a -> b
+  {- Arity: 3, Strictness: <L,C(C1(U))><L,U><S,1*U>,
+     Unfolding: (\ @ b
+                   @ a
+                   (f :: b -> a -> b)
+                   (z :: b)
+                   (t1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 let {
+                   f1 :: a -> b -> b
+                     {- Arity: 2, Strictness: <L,U><L,U>,
+                        Unfolding: InlineRule (2, True, True)
+                                   (\ (x :: a) (eta :: b) -> f eta x) -}
+                   = \ (x :: a) (eta :: b) -> f eta x
+                 } in
+                 case t1 of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                         @ (Data.Monoid.Dual (Data.Monoid.Endo b))
+                         @ a
+                         (Data.Trie.ArrayMapped.Internal.$fFoldableTrie9 @ b)
+                         f1
+                           `cast`
+                         (<a>_R
+                          ->_R Sym (Data.Monoid.N:Dual[0] (Data.Monoid.N:Endo[0] <b>_R)))
+                         t)
+                        `cast`
+                      (Data.Monoid.N:Dual[0] (Data.Monoid.N:Endo[0] <b>_R))
+                        (f z v)
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                         @ (Data.Monoid.Dual (Data.Monoid.Endo b))
+                         @ a
+                         (Data.Trie.ArrayMapped.Internal.$fFoldableTrie9 @ b)
+                         f1
+                           `cast`
+                         (<a>_R
+                          ->_R Sym (Data.Monoid.N:Dual[0] (Data.Monoid.N:Endo[0] <b>_R)))
+                         t)
+                        `cast`
+                      (Data.Monoid.N:Dual[0] (Data.Monoid.N:Endo[0] <b>_R))
+                        z }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cfoldl' ::
+    (b -> a -> b) -> b -> Data.Trie.ArrayMapped.Internal.Trie a -> b
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,C(C1(U))><L,U><S,1*U>,
+     Unfolding: (\ @ b
+                   @ a
+                   (f :: b -> a -> b)
+                   (z0 :: b)
+                   (xs :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case xs of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case f z0 v of x1 { DEFAULT ->
+                      (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                         @ (Data.Monoid.Endo (b -> b))
+                         @ a
+                         (Data.Monoid.$fMonoidEndo @ (b -> b))
+                         (\ (x :: a) (k :: b -> b) (z :: b) ->
+                          case f z x of x2 { DEFAULT -> k x2 })
+                           `cast`
+                         (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <b -> b>_R))
+                         t)
+                        `cast`
+                      (Data.Monoid.N:Endo[0] <b -> b>_R)
+                        (GHC.Base.id @ b)
+                        x1 }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                         @ (Data.Monoid.Endo (b -> b))
+                         @ a
+                         (Data.Monoid.$fMonoidEndo @ (b -> b))
+                         (\ (x :: a) (k :: b -> b) (z :: b) ->
+                          case f z x of x1 { DEFAULT -> k x1 })
+                           `cast`
+                         (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <b -> b>_R))
+                         t)
+                        `cast`
+                      (Data.Monoid.N:Endo[0] <b -> b>_R)
+                        (GHC.Base.id @ b)
+                        z0 }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cfoldl1 ::
+    (a -> a -> a) -> Data.Trie.ArrayMapped.Internal.Trie a -> a
+  {- Arity: 2, Strictness: <L,C(C1(U))><S,1*U>,
+     Unfolding: (\ @ a
+                   (f :: a -> a -> a)
+                   (xs :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldl
+                        @ (GHC.Base.Maybe a)
+                        @ a
+                        (\ (m :: GHC.Base.Maybe a) (y :: a)[OneShot] ->
+                         GHC.Base.Just
+                           @ a
+                           (case m of wild {
+                              GHC.Base.Nothing -> y GHC.Base.Just x -> f x y }))
+                        (GHC.Base.Nothing @ a)
+                        xs of wild {
+                   GHC.Base.Nothing
+                   -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie8 @ a
+                   GHC.Base.Just v -> v }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cfoldr ::
+    (a -> b -> b) -> b -> Data.Trie.ArrayMapped.Internal.Trie a -> b
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,C(U)><L,U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ b
+                   (f :: a -> b -> b)
+                   (z :: b)
+                   (t1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap1
+                    @ (Data.Monoid.Endo b)
+                    @ a
+                    (Data.Monoid.$fMonoidEndo @ b)
+                    f `cast` (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <b>_R))
+                    t1)
+                   `cast`
+                 (Data.Monoid.N:Endo[0] <b>_R)
+                   z) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cfoldr' ::
+    (a -> b -> b) -> b -> Data.Trie.ArrayMapped.Internal.Trie a -> b
+  {- Arity: 3, Strictness: <L,C(C1(U))><L,U><S,1*U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (f :: a -> b -> b)
+                   (z0 :: b)
+                   (xs :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldl
+                   @ (b -> b)
+                   @ a
+                   (\ (k :: b -> b) (x :: a)[OneShot] (z :: b) ->
+                    case f x z of x1 { DEFAULT -> k x1 })
+                   (GHC.Base.id @ b)
+                   xs
+                   z0) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cfoldr1 ::
+    (a -> a -> a) -> Data.Trie.ArrayMapped.Internal.Trie a -> a
+  {- Arity: 2, Strictness: <L,C(C1(U))><S,1*U>,
+     Unfolding: (\ @ a
+                   (f :: a -> a -> a)
+                   (xs :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case xs of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                              @ (Data.Monoid.Endo (GHC.Base.Maybe a))
+                              @ a
+                              (Data.Monoid.$fMonoidEndo @ (GHC.Base.Maybe a))
+                              (\ (x :: a) (m :: GHC.Base.Maybe a) ->
+                               GHC.Base.Just
+                                 @ a
+                                 (case m of wild1 {
+                                    GHC.Base.Nothing -> x GHC.Base.Just y -> f x y }))
+                                `cast`
+                              (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <GHC.Base.Maybe a>_R))
+                              t)
+                             `cast`
+                           (Data.Monoid.N:Endo[0] <GHC.Base.Maybe a>_R)
+                             (GHC.Base.Nothing @ a) of wild1 {
+                        GHC.Base.Nothing -> v GHC.Base.Just y -> f v y }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                              @ (Data.Monoid.Endo (GHC.Base.Maybe a))
+                              @ a
+                              (Data.Monoid.$fMonoidEndo @ (GHC.Base.Maybe a))
+                              (\ (x :: a) (m :: GHC.Base.Maybe a) ->
+                               GHC.Base.Just
+                                 @ a
+                                 (case m of wild1 {
+                                    GHC.Base.Nothing -> x GHC.Base.Just y -> f x y }))
+                                `cast`
+                              (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <GHC.Base.Maybe a>_R))
+                              t)
+                             `cast`
+                           (Data.Monoid.N:Endo[0] <GHC.Base.Maybe a>_R)
+                             (GHC.Base.Nothing @ a) of wild1 {
+                        GHC.Base.Nothing
+                        -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie10 @ a
+                        GHC.Base.Just v -> v } }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$clength ::
+    Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ a ->
+                 Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldl'
+                   @ GHC.Types.Int
+                   @ a
+                   (Data.Trie.ArrayMapped.Internal.$fFoldableTrie7 @ a)
+                   Data.Trie.ArrayMapped.Internal.$fFoldableTrie_z0) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cmaximum ::
+    GHC.Classes.Ord a => Data.Trie.ArrayMapped.Internal.Trie a -> a
+  {- Arity: 1, Strictness: <L,U(A,A,A,A,A,C(C1(U)),A,A)>,
+     Unfolding: (\ @ a ($dOrd :: GHC.Classes.Ord a) ->
+                 let {
+                   $dMonoid :: GHC.Base.Monoid (Data.Foldable.Max a)
+                   = Data.Foldable.$fMonoidMax @ a $dOrd
+                 } in
+                 \ (x :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case x of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                              @ (Data.Foldable.Max a)
+                              @ a
+                              $dMonoid
+                              (GHC.Base.Just @ a)
+                                `cast`
+                              (<a>_R ->_R Sym (Data.Foldable.N:Max[0]) <a>_N)
+                              t)
+                             `cast`
+                           (Data.Foldable.N:Max[0] <a>_N) of wild1 {
+                        GHC.Base.Nothing -> v
+                        GHC.Base.Just ipv
+                        -> case GHC.Classes.>= @ a $dOrd v ipv of wild2 {
+                             GHC.Types.False -> ipv GHC.Types.True -> v } }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                              @ (Data.Foldable.Max a)
+                              @ a
+                              $dMonoid
+                              (GHC.Base.Just @ a)
+                                `cast`
+                              (<a>_R ->_R Sym (Data.Foldable.N:Max[0]) <a>_N)
+                              t)
+                             `cast`
+                           (Data.Foldable.N:Max[0] <a>_N) of wild1 {
+                        GHC.Base.Nothing
+                        -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie5 @ a
+                        GHC.Base.Just v -> v } }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cminimum ::
+    GHC.Classes.Ord a => Data.Trie.ArrayMapped.Internal.Trie a -> a
+  {- Arity: 1, Strictness: <L,U(A,A,A,C(C1(U)),A,A,A,A)>,
+     Unfolding: (\ @ a ($dOrd :: GHC.Classes.Ord a) ->
+                 let {
+                   $dMonoid :: GHC.Base.Monoid (Data.Foldable.Min a)
+                   = Data.Foldable.$fMonoidMin @ a $dOrd
+                 } in
+                 \ (x :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case x of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                              @ (Data.Foldable.Min a)
+                              @ a
+                              $dMonoid
+                              (GHC.Base.Just @ a)
+                                `cast`
+                              (<a>_R ->_R Sym (Data.Foldable.N:Min[0]) <a>_N)
+                              t)
+                             `cast`
+                           (Data.Foldable.N:Min[0] <a>_N) of wild1 {
+                        GHC.Base.Nothing -> v
+                        GHC.Base.Just ipv
+                        -> case GHC.Classes.<= @ a $dOrd v ipv of wild2 {
+                             GHC.Types.False -> ipv GHC.Types.True -> v } }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                              @ (Data.Foldable.Min a)
+                              @ a
+                              $dMonoid
+                              (GHC.Base.Just @ a)
+                                `cast`
+                              (<a>_R ->_R Sym (Data.Foldable.N:Min[0]) <a>_N)
+                              t)
+                             `cast`
+                           (Data.Foldable.N:Min[0] <a>_N) of wild1 {
+                        GHC.Base.Nothing
+                        -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie4 @ a
+                        GHC.Base.Just v -> v } }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cnull ::
+    Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (t1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case t1 of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t -> GHC.Types.False
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                         @ (Data.Monoid.Endo GHC.Types.Bool)
+                         @ a
+                         (Data.Monoid.$fMonoidEndo @ GHC.Types.Bool)
+                         (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_f @ a)
+                           `cast`
+                         (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <GHC.Types.Bool>_R))
+                         t)
+                        `cast`
+                      (Data.Monoid.N:Endo[0] <GHC.Types.Bool>_R)
+                        GHC.Types.True }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$cproduct ::
+    GHC.Num.Num a => Data.Trie.ArrayMapped.Internal.Trie a -> a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(A,A,U,A,A,A,C(U))>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Trie.ArrayMapped.Internal.$fFoldableTrie1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Num.Num a>_R
+                 ->_R <Data.Trie.ArrayMapped.Internal.Trie a>_R
+                 ->_R Data.Monoid.N:Product[0] <a>_R) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$csum ::
+    GHC.Num.Num a => Data.Trie.ArrayMapped.Internal.Trie a -> a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U,A,A,A,A,A,C(U))>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Trie.ArrayMapped.Internal.$fFoldableTrie3
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Num.Num a>_R
+                 ->_R <Data.Trie.ArrayMapped.Internal.Trie a>_R
+                 ->_R Data.Monoid.N:Sum[0] <a>_R) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFoldableTrie_$ctoList ::
+    Data.Trie.ArrayMapped.Internal.Trie a -> [a]
+  {- Arity: 1, Strictness: <L,U>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a (t1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 GHC.Base.build
+                   @ a
+                   (\ @ b (c :: a -> b -> b)[OneShot] (n :: b)[OneShot] ->
+                    Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldr
+                      @ a
+                      @ b
+                      c
+                      n
+                      t1)) -}
+be2797532c5c026b476163c097bed50a
+  $fFoldableTrie_f :: a -> GHC.Types.Bool -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (ds :: a) (ds1 :: GHC.Types.Bool) -> GHC.Types.False) -}
+6748d0947b2de49896e339cf5685359a
+  $fFoldableTrie_z0 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk ::
+    Data.Foldable.Foldable Data.Trie.ArrayMapped.Internal.Trunk
+  DFunId
+  {- Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.Trie.ArrayMapped.Internal.Trunk
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cfold
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cfoldr
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cfoldr'
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cfoldl
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cfoldl'
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cfoldr1
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cfoldl1
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$ctoList
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cnull
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$clength
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$celem
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cmaximum
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cminimum
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$csum
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cproduct -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk1 ::
+    GHC.Num.Num a =>
+    Data.Trie.ArrayMapped.Internal.Trunk a -> Data.Monoid.Product a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(A,A,U,A,A,A,C(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ($dNum :: GHC.Num.Num a) ->
+                 Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                   @ (Data.Monoid.Product a)
+                   @ a
+                   (Data.Monoid.$fMonoidProduct @ a $dNum)
+                   (\ (tpl :: a) -> tpl)
+                     `cast`
+                   (<a>_R ->_R Sym (Data.Monoid.N:Product[0] <a>_R))) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk2 ::
+    GHC.Num.Num a =>
+    Data.Trie.ArrayMapped.Internal.Trunk a -> Data.Monoid.Sum a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U,A,A,A,A,A,C(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ($dNum :: GHC.Num.Num a) ->
+                 Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                   @ (Data.Monoid.Sum a)
+                   @ a
+                   (Data.Monoid.$fMonoidSum @ a $dNum)
+                   (\ (tpl :: a) -> tpl)
+                     `cast`
+                   (<a>_R ->_R Sym (Data.Monoid.N:Sum[0] <a>_R))) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk3 ::
+    GHC.Classes.Eq a =>
+    a -> Data.Trie.ArrayMapped.Internal.Trunk a -> Data.Monoid.Any
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(1*C1(C(U)),A)><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dEq :: GHC.Classes.Eq a) (eta :: a) ->
+                 Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                   @ Data.Monoid.Any
+                   @ a
+                   Data.Monoid.$fMonoidAny
+                   (GHC.Classes.== @ a $dEq eta)
+                     `cast`
+                   (<a>_R ->_R Sym (Data.Monoid.N:Any[0]))) -}
+43d08a783b327f26c057444cc31286b6
+  $fFoldableTrunk4 ::
+    a
+    -> (GHC.Types.Int -> GHC.Types.Int)
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+  {- Arity: 3, HasNoCafRefs,
+     Unfolding: (\ @ a
+                   (x :: a)
+                   (k :: GHC.Types.Int -> GHC.Types.Int)
+                   (z :: GHC.Types.Int) ->
+                 case z of wild { GHC.Types.I# x1 ->
+                 k (GHC.Types.I# (GHC.Prim.+# x1 1#)) }) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$celem ::
+    GHC.Classes.Eq a =>
+    a -> Data.Trie.ArrayMapped.Internal.Trunk a -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(1*C1(C(U)),A)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Trie.ArrayMapped.Internal.$fFoldableTrunk3
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Classes.Eq a>_R
+                 ->_R <a>_R
+                 ->_R <Data.Trie.ArrayMapped.Internal.Trunk a>_R
+                 ->_R Data.Monoid.N:Any[0]) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cfold ::
+    GHC.Base.Monoid m => Data.Trie.ArrayMapped.Internal.Trunk m -> m
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U,U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ m
+                   ($dMonoid :: GHC.Base.Monoid m)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trunk m) ->
+                 Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                   @ m
+                   @ m
+                   $dMonoid
+                   (GHC.Base.id @ m)
+                   eta) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cfoldl ::
+    (b -> a -> b) -> b -> Data.Trie.ArrayMapped.Internal.Trunk a -> b
+  {- Arity: 3, Strictness: <L,C(C1(U))><L,U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ b
+                   @ a
+                   (f :: b -> a -> b)
+                   (z :: b)
+                   (t1 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                    @ (Data.Monoid.Dual (Data.Monoid.Endo b))
+                    @ a
+                    (Data.Trie.ArrayMapped.Internal.$fFoldableTrie9 @ b)
+                    (\ (x :: a) (eta :: b) -> f eta x)
+                      `cast`
+                    (<a>_R
+                     ->_R Sym (Data.Monoid.N:Dual[0] (Data.Monoid.N:Endo[0] <b>_R)))
+                    t1)
+                   `cast`
+                 (Data.Monoid.N:Dual[0] (Data.Monoid.N:Endo[0] <b>_R))
+                   z) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cfoldl' ::
+    (b -> a -> b) -> b -> Data.Trie.ArrayMapped.Internal.Trunk a -> b
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,C(C1(U))><L,U><S,1*U>,
+     Unfolding: (\ @ b
+                   @ a
+                   (f :: b -> a -> b)
+                   (z0 :: b)
+                   (xs :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                    @ (Data.Monoid.Endo (b -> b))
+                    @ a
+                    (Data.Monoid.$fMonoidEndo @ (b -> b))
+                    (\ (x :: a) (k :: b -> b) (z :: b) ->
+                     case f z x of x1 { DEFAULT -> k x1 })
+                      `cast`
+                    (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <b -> b>_R))
+                    xs)
+                   `cast`
+                 (Data.Monoid.N:Endo[0] <b -> b>_R)
+                   (GHC.Base.id @ b)
+                   z0) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cfoldl1 ::
+    (a -> a -> a) -> Data.Trie.ArrayMapped.Internal.Trunk a -> a
+  {- Arity: 2, Strictness: <L,C(C1(U))><S,1*U>,
+     Unfolding: (\ @ a
+                   (f :: a -> a -> a)
+                   (xs :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                         @ (Data.Monoid.Dual (Data.Monoid.Endo (GHC.Base.Maybe a)))
+                         @ a
+                         (Data.Trie.ArrayMapped.Internal.$fFoldableTrie9
+                            @ (GHC.Base.Maybe a))
+                         (\ (x :: a) (eta :: GHC.Base.Maybe a) ->
+                          GHC.Base.Just
+                            @ a
+                            (case eta of wild {
+                               GHC.Base.Nothing -> x GHC.Base.Just x1 -> f x1 x }))
+                           `cast`
+                         (<a>_R
+                          ->_R Sym (Data.Monoid.N:Dual[0]
+                                        (Data.Monoid.N:Endo[0] <GHC.Base.Maybe a>_R)))
+                         xs)
+                        `cast`
+                      (Data.Monoid.N:Dual[0]
+                           (Data.Monoid.N:Endo[0] <GHC.Base.Maybe a>_R))
+                        (GHC.Base.Nothing @ a) of wild {
+                   GHC.Base.Nothing
+                   -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie8 @ a
+                   GHC.Base.Just v -> v }) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cfoldr ::
+    (a -> b -> b) -> b -> Data.Trie.ArrayMapped.Internal.Trunk a -> b
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,C(U)><L,U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ b
+                   (f :: a -> b -> b)
+                   (z :: b)
+                   (t1 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                    @ (Data.Monoid.Endo b)
+                    @ a
+                    (Data.Monoid.$fMonoidEndo @ b)
+                    f `cast` (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <b>_R))
+                    t1)
+                   `cast`
+                 (Data.Monoid.N:Endo[0] <b>_R)
+                   z) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cfoldr' ::
+    (a -> b -> b) -> b -> Data.Trie.ArrayMapped.Internal.Trunk a -> b
+  {- Arity: 3, Strictness: <L,C(C1(U))><L,U><S,1*U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (f :: a -> b -> b)
+                   (z0 :: b)
+                   (xs :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                    @ (Data.Monoid.Dual (Data.Monoid.Endo (b -> b)))
+                    @ a
+                    (Data.Trie.ArrayMapped.Internal.$fFoldableTrie9 @ (b -> b))
+                    (\ (x :: a) (eta :: b -> b) (z :: b) ->
+                     case f x z of x1 { DEFAULT -> eta x1 })
+                      `cast`
+                    (<a>_R
+                     ->_R Sym (Data.Monoid.N:Dual[0]
+                                   (Data.Monoid.N:Endo[0] <b -> b>_R)))
+                    xs)
+                   `cast`
+                 (Data.Monoid.N:Dual[0] (Data.Monoid.N:Endo[0] <b -> b>_R))
+                   (GHC.Base.id @ b)
+                   z0) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cfoldr1 ::
+    (a -> a -> a) -> Data.Trie.ArrayMapped.Internal.Trunk a -> a
+  {- Arity: 2, Strictness: <L,C(C1(U))><S,1*U>,
+     Unfolding: (\ @ a
+                   (f :: a -> a -> a)
+                   (xs :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                         @ (Data.Monoid.Endo (GHC.Base.Maybe a))
+                         @ a
+                         (Data.Monoid.$fMonoidEndo @ (GHC.Base.Maybe a))
+                         (\ (x :: a) (m :: GHC.Base.Maybe a) ->
+                          GHC.Base.Just
+                            @ a
+                            (case m of wild {
+                               GHC.Base.Nothing -> x GHC.Base.Just y -> f x y }))
+                           `cast`
+                         (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <GHC.Base.Maybe a>_R))
+                         xs)
+                        `cast`
+                      (Data.Monoid.N:Endo[0] <GHC.Base.Maybe a>_R)
+                        (GHC.Base.Nothing @ a) of wild {
+                   GHC.Base.Nothing
+                   -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie10 @ a
+                   GHC.Base.Just v -> v }) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$clength ::
+    Data.Trie.ArrayMapped.Internal.Trunk a -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (xs :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                    @ (Data.Monoid.Endo (GHC.Types.Int -> GHC.Types.Int))
+                    @ a
+                    (Data.Monoid.$fMonoidEndo @ (GHC.Types.Int -> GHC.Types.Int))
+                    (Data.Trie.ArrayMapped.Internal.$fFoldableTrunk4 @ a)
+                      `cast`
+                    (<a>_R
+                     ->_R Sym (Data.Monoid.N:Endo[0]
+                                   <GHC.Types.Int -> GHC.Types.Int>_R))
+                    xs)
+                   `cast`
+                 (Data.Monoid.N:Endo[0] <GHC.Types.Int -> GHC.Types.Int>_R)
+                   (GHC.Base.id @ GHC.Types.Int)
+                   Data.Trie.ArrayMapped.Internal.$fFoldableTrie_z0) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cmaximum ::
+    GHC.Classes.Ord a => Data.Trie.ArrayMapped.Internal.Trunk a -> a
+  {- Arity: 1, Strictness: <L,U(A,A,A,A,A,C(C1(U)),A,A)>,
+     Unfolding: (\ @ a ($dOrd :: GHC.Classes.Ord a) ->
+                 let {
+                   g :: GHC.Base.Monoid (Data.Foldable.Max a)
+                   = Data.Foldable.$fMonoidMax @ a $dOrd
+                 } in
+                 \ (x :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                         @ (Data.Foldable.Max a)
+                         @ a
+                         g
+                         (GHC.Base.Just @ a)
+                           `cast`
+                         (<a>_R ->_R Sym (Data.Foldable.N:Max[0]) <a>_N)
+                         x)
+                        `cast`
+                      (Data.Foldable.N:Max[0] <a>_N) of wild {
+                   GHC.Base.Nothing
+                   -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie5 @ a
+                   GHC.Base.Just v -> v }) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cminimum ::
+    GHC.Classes.Ord a => Data.Trie.ArrayMapped.Internal.Trunk a -> a
+  {- Arity: 1, Strictness: <L,U(A,A,A,C(C1(U)),A,A,A,A)>,
+     Unfolding: (\ @ a ($dOrd :: GHC.Classes.Ord a) ->
+                 let {
+                   g :: GHC.Base.Monoid (Data.Foldable.Min a)
+                   = Data.Foldable.$fMonoidMin @ a $dOrd
+                 } in
+                 \ (x :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 case (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                         @ (Data.Foldable.Min a)
+                         @ a
+                         g
+                         (GHC.Base.Just @ a)
+                           `cast`
+                         (<a>_R ->_R Sym (Data.Foldable.N:Min[0]) <a>_N)
+                         x)
+                        `cast`
+                      (Data.Foldable.N:Min[0] <a>_N) of wild {
+                   GHC.Base.Nothing
+                   -> Data.Trie.ArrayMapped.Internal.$fFoldableTrie4 @ a
+                   GHC.Base.Just v -> v }) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cnull ::
+    Data.Trie.ArrayMapped.Internal.Trunk a -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (t1 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_$cfoldMap
+                    @ (Data.Monoid.Endo GHC.Types.Bool)
+                    @ a
+                    (Data.Monoid.$fMonoidEndo @ GHC.Types.Bool)
+                    (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_f @ a)
+                      `cast`
+                    (<a>_R ->_R Sym (Data.Monoid.N:Endo[0] <GHC.Types.Bool>_R))
+                    t1)
+                   `cast`
+                 (Data.Monoid.N:Endo[0] <GHC.Types.Bool>_R)
+                   GHC.Types.True) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$cproduct ::
+    GHC.Num.Num a => Data.Trie.ArrayMapped.Internal.Trunk a -> a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(A,A,U,A,A,A,C(U))>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Trie.ArrayMapped.Internal.$fFoldableTrunk1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Num.Num a>_R
+                 ->_R <Data.Trie.ArrayMapped.Internal.Trunk a>_R
+                 ->_R Data.Monoid.N:Product[0] <a>_R) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$csum ::
+    GHC.Num.Num a => Data.Trie.ArrayMapped.Internal.Trunk a -> a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U,A,A,A,A,A,C(U))>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Trie.ArrayMapped.Internal.$fFoldableTrunk2
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Num.Num a>_R
+                 ->_R <Data.Trie.ArrayMapped.Internal.Trunk a>_R
+                 ->_R Data.Monoid.N:Sum[0] <a>_R) -}
+a872b439be10c608ce74d93bff9da351
+  $fFoldableTrunk_$ctoList ::
+    Data.Trie.ArrayMapped.Internal.Trunk a -> [a]
+  {- Arity: 1, Strictness: <L,U>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a (t1 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 GHC.Base.build
+                   @ a
+                   (\ @ b (c :: a -> b -> b)[OneShot] (n :: b)[OneShot] ->
+                    Data.Trie.ArrayMapped.Internal.$fFoldableTrunk_$cfoldr
+                      @ a
+                      @ b
+                      c
+                      n
+                      t1)) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFunctorTrie ::
+    GHC.Base.Functor Data.Trie.ArrayMapped.Internal.Trie
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.Trie.ArrayMapped.Internal.Trie
+                  Data.Trie.ArrayMapped.Internal.$fFunctorTrie_$cfmap1
+                  Data.Trie.ArrayMapped.Internal.$fFunctorTrie_$c<$ -}
+03bcb0def4d0999c581debeb0287d893
+  $fFunctorTrie_$c<$ ::
+    a
+    -> Data.Trie.ArrayMapped.Internal.Trie b
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 2, Strictness: <L,U><S,1*U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (eta :: a)
+                   (eta1 :: Data.Trie.ArrayMapped.Internal.Trie b) ->
+                 let {
+                   f :: b -> a
+                     {- Arity: 1, Strictness: <L,A>,
+                        Unfolding: InlineRule (1, True, True) (\ (ds :: b) -> eta) -}
+                   = \ (ds :: b) -> eta
+                 } in
+                 case eta1 of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case Data.Trie.ArrayMapped.Internal.$fFunctorTrie_$cfmap
+                             @ b
+                             @ a
+                             f
+                             t of dt { DEFAULT ->
+                      Data.Trie.ArrayMapped.Internal.Accept @ a eta dt }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> case Data.Trie.ArrayMapped.Internal.$fFunctorTrie_$cfmap
+                             @ b
+                             @ a
+                             f
+                             t of dt { DEFAULT ->
+                      Data.Trie.ArrayMapped.Internal.Reject @ a dt } }) -}
+a872b439be10c608ce74d93bff9da351
+  $fFunctorTrie_$cfmap ::
+    (a -> b)
+    -> Data.Trie.ArrayMapped.Internal.Trunk a
+    -> Data.Trie.ArrayMapped.Internal.Trunk b
+  {- Arity: 2, Strictness: <L,C(U)><S,1*U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (f :: a -> b)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 letrec {
+                   go :: Data.Trie.ArrayMapped.Internal.Trunk a
+                         -> Data.Trie.ArrayMapped.Internal.Trunk b
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                     case ds of wild {
+                       Data.Trie.ArrayMapped.Internal.Empty
+                       -> Data.Trie.ArrayMapped.Internal.Empty @ b
+                       Data.Trie.ArrayMapped.Internal.Arc dt dt1 dt2 dt3 v t
+                       -> case go t of dt4 { DEFAULT ->
+                          Data.Trie.ArrayMapped.Internal.Arc @ b dt dt1 dt2 dt3 (f v) dt4 }
+                       Data.Trie.ArrayMapped.Internal.Branch dt dt1 dt2 dt3 dt4 dt5 dt6 dt7
+                       -> case Data.Trie.ArrayMapped.SparseArray.$wmap
+                                 @ a
+                                 @ b
+                                 f
+                                 dt4
+                                 dt5 of dt8 { Data.Trie.ArrayMapped.SparseArray.SA dt9 dt10 ->
+                          case Data.Trie.ArrayMapped.SparseArray.$wmap
+                                 @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                                 @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                                 go
+                                 dt6
+                                 dt7 of dt11 { Data.Trie.ArrayMapped.SparseArray.SA dt12 dt13 ->
+                          Data.Trie.ArrayMapped.Internal.Branch
+                            @ b
+                            dt
+                            dt1
+                            dt2
+                            dt3
+                            dt9
+                            dt10
+                            dt12
+                            dt13 } } }
+                 } in
+                 go eta) -}
+03bcb0def4d0999c581debeb0287d893
+  $fFunctorTrie_$cfmap1 ::
+    (a -> b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie b
+  {- Arity: 2, Strictness: <L,C(U)><S,1*U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (f :: a -> b)
+                   (ds :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case ds of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case Data.Trie.ArrayMapped.Internal.$fFunctorTrie_$cfmap
+                             @ a
+                             @ b
+                             f
+                             t of dt { DEFAULT ->
+                      Data.Trie.ArrayMapped.Internal.Accept @ b (f v) dt }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> case Data.Trie.ArrayMapped.Internal.$fFunctorTrie_$cfmap
+                             @ a
+                             @ b
+                             f
+                             t of dt { DEFAULT ->
+                      Data.Trie.ArrayMapped.Internal.Reject @ b dt } }) -}
+a872b439be10c608ce74d93bff9da351
+  $fFunctorTrunk ::
+    GHC.Base.Functor Data.Trie.ArrayMapped.Internal.Trunk
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.Trie.ArrayMapped.Internal.Trunk
+                  Data.Trie.ArrayMapped.Internal.$fFunctorTrie_$cfmap
+                  Data.Trie.ArrayMapped.Internal.$fFunctorTrunk_$c<$ -}
+a872b439be10c608ce74d93bff9da351
+  $fFunctorTrunk_$c<$ ::
+    a
+    -> Data.Trie.ArrayMapped.Internal.Trunk b
+    -> Data.Trie.ArrayMapped.Internal.Trunk a
+  {- Arity: 2, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   @ b
+                   (eta :: a)
+                   (eta1 :: Data.Trie.ArrayMapped.Internal.Trunk b) ->
+                 Data.Trie.ArrayMapped.Internal.$fFunctorTrie_$cfmap
+                   @ b
+                   @ a
+                   (\ (ds :: b) -> eta)
+                   eta1) -}
+03bcb0def4d0999c581debeb0287d893
+  $fMonoidTrie ::
+    GHC.Base.Monoid a =>
+    GHC.Base.Monoid (Data.Trie.ArrayMapped.Internal.Trie a)
+  DFunId
+  {- Arity: 1, Strictness: <L,A>m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dMonoid :: GHC.Base.Monoid a).
+                  @ (Data.Trie.ArrayMapped.Internal.Trie a)
+                  (Data.Trie.ArrayMapped.Internal.$fMonoidTrie_$cmempty @ a $dMonoid)
+                  (Data.Trie.ArrayMapped.Internal.$fMonoidTrie_$cmappend
+                     @ a
+                     $dMonoid)
+                  (Data.Trie.ArrayMapped.Internal.$fMonoidTrie_$cmconcat
+                     @ a
+                     $dMonoid) -}
+03bcb0def4d0999c581debeb0287d893
+  $fMonoidTrie1 ::
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Strictness: x -}
+03bcb0def4d0999c581debeb0287d893
+  $fMonoidTrie_$cmappend ::
+    GHC.Base.Monoid a =>
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, Strictness: <B,A>x, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (w :: GHC.Base.Monoid a) ->
+                 Data.Trie.ArrayMapped.Internal.$w$cmappend @ a GHC.Prim.void#) -}
+03bcb0def4d0999c581debeb0287d893
+  $fMonoidTrie_$cmconcat ::
+    GHC.Base.Monoid a =>
+    [Data.Trie.ArrayMapped.Internal.Trie a]
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 2, Strictness: <L,A><S,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   (w :: GHC.Base.Monoid a)
+                   (w1 :: [Data.Trie.ArrayMapped.Internal.Trie a]) ->
+                 case w1 of wild {
+                   [] -> Data.Trie.ArrayMapped.Internal.empty @ a
+                   : y ys
+                   -> case Data.Trie.ArrayMapped.Internal.$fMonoidTrie1
+                      ret_ty (Data.Trie.ArrayMapped.Internal.Trie a)
+                      of {} }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fMonoidTrie_$cmempty ::
+    GHC.Base.Monoid a => Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>m2,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a ($dMonoid :: GHC.Base.Monoid a) ->
+                 Data.Trie.ArrayMapped.Internal.empty @ a) -}
+03bcb0def4d0999c581debeb0287d893
+  $fNFDataTrie ::
+    Control.DeepSeq.NFData a =>
+    Control.DeepSeq.NFData (Data.Trie.ArrayMapped.Internal.Trie a)
+  DFunId
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(H)><S,1*U>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (1, False, True)
+                Data.Trie.ArrayMapped.Internal.$fNFDataTrie_$crnf
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Control.DeepSeq.NFData a>_R
+                 ->_R Sym (Control.DeepSeq.N:NFData[0]
+                               <Data.Trie.ArrayMapped.Internal.Trie a>_N)) -}
+03bcb0def4d0999c581debeb0287d893
+  $fNFDataTrie_$crnf ::
+    Control.DeepSeq.NFData a =>
+    Data.Trie.ArrayMapped.Internal.Trie a -> ()
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(H)><S,1*U>,
+     Unfolding: (\ @ a
+                   ($dNFData :: Control.DeepSeq.NFData a)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case eta of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case $dNFData `cast` (Control.DeepSeq.N:NFData[0] <a>_N)
+                             v of wild1 { () ->
+                      Data.Trie.ArrayMapped.Internal.$fNFDataTrie_$crnf1 @ a $dNFData t }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> Data.Trie.ArrayMapped.Internal.$fNFDataTrie_$crnf1
+                        @ a
+                        $dNFData
+                        t }) -}
+a872b439be10c608ce74d93bff9da351
+  $fNFDataTrie_$crnf1 ::
+    Control.DeepSeq.NFData a =>
+    Data.Trie.ArrayMapped.Internal.Trunk a -> ()
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(H)><S,1*U> -}
+a872b439be10c608ce74d93bff9da351
+  $fNFDataTrunk ::
+    Control.DeepSeq.NFData a =>
+    Control.DeepSeq.NFData (Data.Trie.ArrayMapped.Internal.Trunk a)
+  DFunId
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(H)><S,1*U>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (1, False, True)
+                Data.Trie.ArrayMapped.Internal.$fNFDataTrie_$crnf1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Control.DeepSeq.NFData a>_R
+                 ->_R Sym (Control.DeepSeq.N:NFData[0]
+                               <Data.Trie.ArrayMapped.Internal.Trunk a>_N)) -}
+03bcb0def4d0999c581debeb0287d893
+  $fSemigroupTrie ::
+    Data.Semigroup.Semigroup a =>
+    Data.Semigroup.Semigroup (Data.Trie.ArrayMapped.Internal.Trie a)
+  DFunId
+  {- Arity: 1, Strictness: <L,A>m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dSemigroup :: Data.Semigroup.Semigroup a).
+                  @ (Data.Trie.ArrayMapped.Internal.Trie a)
+                  (Data.Trie.ArrayMapped.Internal.$fSemigroupTrie_$c<>
+                     @ a
+                     $dSemigroup)
+                  (Data.Trie.ArrayMapped.Internal.$fSemigroupTrie_$csconcat
+                     @ a
+                     $dSemigroup)
+                  (Data.Trie.ArrayMapped.Internal.$fSemigroupTrie_$cstimes
+                     @ a
+                     $dSemigroup) -}
+03bcb0def4d0999c581debeb0287d893
+  $fSemigroupTrie1 :: Data.Trie.ArrayMapped.Internal.Trie a
+  {- Strictness: x -}
+03bcb0def4d0999c581debeb0287d893
+  $fSemigroupTrie2 ::
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Strictness: x -}
+03bcb0def4d0999c581debeb0287d893
+  $fSemigroupTrie3 ::
+    b
+    -> (GHC.Num.Num b, GHC.Real.Integral b) =>
+       Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 3, Strictness: <L,U><L,U><L,U>x -}
+ef1df23f711c6861c5051756b96c7aeb
+  $fSemigroupTrie4 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+626a0ad39768ad868998b2b5fe04473f
+  $fSemigroupTrie5 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+03bcb0def4d0999c581debeb0287d893
+  $fSemigroupTrie_$c<> ::
+    Data.Semigroup.Semigroup a =>
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, Strictness: <B,A>x, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (w :: Data.Semigroup.Semigroup a) ->
+                 Data.Trie.ArrayMapped.Internal.$w$c<> @ a GHC.Prim.void#) -}
+03bcb0def4d0999c581debeb0287d893
+  $fSemigroupTrie_$csconcat ::
+    Data.Semigroup.Semigroup a =>
+    Data.List.NonEmpty.NonEmpty (Data.Trie.ArrayMapped.Internal.Trie a)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 2, Strictness: <L,A><S(SS),1*U(1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   (w :: Data.Semigroup.Semigroup a)
+                   (w1 :: Data.List.NonEmpty.NonEmpty
+                            (Data.Trie.ArrayMapped.Internal.Trie a)) ->
+                 case w1 of ww { Data.List.NonEmpty.:| ww1 ww2 ->
+                 case ww2 of wild1 {
+                   [] -> ww1
+                   : c cs
+                   -> case Data.Trie.ArrayMapped.Internal.$fSemigroupTrie2
+                      ret_ty (Data.Trie.ArrayMapped.Internal.Trie a)
+                      of {} } }) -}
+03bcb0def4d0999c581debeb0287d893
+  $fSemigroupTrie_$cstimes ::
+    Data.Semigroup.Semigroup a =>
+    forall b.
+    GHC.Real.Integral b =>
+    b
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 4,
+     Strictness: <L,A><S(SLLLLLLLL),U(U,U,C(C1(U)),C(C1(U)),A,A,A,A,A)><L,U><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, True)
+                (\ @ a
+                   (w :: Data.Semigroup.Semigroup a)
+                   @ b
+                   (w1 :: GHC.Real.Integral b)
+                   (w2 :: b)
+                   (w3 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 Data.Trie.ArrayMapped.Internal.$w$cstimes @ a @ b w1 w2 w3) -}
+03bcb0def4d0999c581debeb0287d893
+  $fShowTrie ::
+    GHC.Show.Show a =>
+    GHC.Show.Show (Data.Trie.ArrayMapped.Internal.Trie a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dShow :: GHC.Show.Show a).
+                  @ (Data.Trie.ArrayMapped.Internal.Trie a)
+                  (Data.Trie.ArrayMapped.Internal.$fShowTrie_$cshowsPrec @ a $dShow)
+                  (Data.Trie.ArrayMapped.Internal.$fShowTrie_$cshow @ a $dShow)
+                  (Data.Trie.ArrayMapped.Internal.$fShowTrie_$cshowList
+                     @ a
+                     $dShow) -}
+0fc9b34712a8dfd499e50581648fd738
+  $fShowTrie1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "fromList "#) -}
+9d047f070fb8b489a1128ef26bdc9967
+  $fShowTrie2 ::
+    Data.ByteString.Internal.ByteString
+    -> a
+    -> [(Data.ByteString.Internal.ByteString, a)]
+    -> [(Data.ByteString.Internal.ByteString, a)]
+  {- Arity: 3, HasNoCafRefs,
+     Unfolding: (\ @ a
+                   (x :: Data.ByteString.Internal.ByteString)
+                   (x1 :: a)[OneShot]
+                   (eta :: [(Data.ByteString.Internal.ByteString, a)])[OneShot] ->
+                 GHC.Types.:
+                   @ (Data.ByteString.Internal.ByteString, a)
+                   (x, x1)
+                   eta) -}
+1188b5654b03bdc408e52e6075d3492c
+  $fShowTrie3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackAppendCString#
+                   "[]"#
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+03bcb0def4d0999c581debeb0287d893
+  $fShowTrie_$cshow ::
+    GHC.Show.Show a =>
+    Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><L,1*U>,
+     Unfolding: (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (x :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Data.Trie.ArrayMapped.Internal.$fShowTrie1
+                   (case Data.Trie.ArrayMapped.Internal.foldrWithKey
+                           @ a
+                           @ [(Data.ByteString.Internal.ByteString, a)]
+                           (Data.Trie.ArrayMapped.Internal.$fShowTrie2 @ a)
+                           (GHC.Types.[] @ (Data.ByteString.Internal.ByteString, a))
+                           x of wild {
+                      [] -> Data.Trie.ArrayMapped.Internal.$fShowTrie3
+                      : x1 xs
+                      -> GHC.Types.:
+                           @ GHC.Types.Char
+                           GHC.Show.showList__2
+                           (case x1 of ww { (,) ww1 ww2 ->
+                            GHC.Types.:
+                              @ GHC.Types.Char
+                              GHC.Show.shows9
+                              (GHC.Types.:
+                                 @ GHC.Types.Char
+                                 GHC.Show.shows8
+                                 (case ww1 of ww4 { Data.ByteString.Internal.PS ww5 ww6 ww3 ww7 ->
+                                  GHC.Show.showLitString
+                                    (Data.ByteString.Internal.$wunpackAppendCharsLazy
+                                       ww5
+                                       ww6
+                                       ww3
+                                       ww7
+                                       (GHC.Types.[] @ GHC.Types.Char))
+                                    (GHC.Types.:
+                                       @ GHC.Types.Char
+                                       GHC.Show.shows8
+                                       (GHC.Types.:
+                                          @ GHC.Types.Char
+                                          GHC.Show.shows7
+                                          (GHC.Show.$fShow(,)_$sgo
+                                             (GHC.Types.:
+                                                @ GHC.Types.Char
+                                                GHC.Show.shows6
+                                                (letrec {
+                                                   showl :: [(Data.ByteString.Internal.ByteString,
+                                                              a)]
+                                                            -> GHC.Base.String
+                                                     {- Arity: 1, Strictness: <S,1*U> -}
+                                                   = \ (ds2 :: [(Data.ByteString.Internal.ByteString,
+                                                                 a)]) ->
+                                                     case ds2 of wild1 {
+                                                       []
+                                                       -> Data.Trie.ArrayMapped.Internal.$fShowTrie_lvl27
+                                                       : y ys
+                                                       -> GHC.Types.:
+                                                            @ GHC.Types.Char
+                                                            GHC.Show.shows7
+                                                            (case y of ww8 { (,) ww9 ww10 ->
+                                                             GHC.Types.:
+                                                               @ GHC.Types.Char
+                                                               GHC.Show.shows9
+                                                               (GHC.Types.:
+                                                                  @ GHC.Types.Char
+                                                                  GHC.Show.shows8
+                                                                  (GHC.Show.showLitString
+                                                                     (Data.ByteString.Internal.unpackChars
+                                                                        ww9)
+                                                                     (GHC.Types.:
+                                                                        @ GHC.Types.Char
+                                                                        GHC.Show.shows8
+                                                                        (GHC.Types.:
+                                                                           @ GHC.Types.Char
+                                                                           GHC.Show.shows7
+                                                                           (GHC.Show.$fShow(,)_$sgo
+                                                                              (GHC.Types.:
+                                                                                 @ GHC.Types.Char
+                                                                                 GHC.Show.shows6
+                                                                                 (showl ys))
+                                                                              (GHC.Show.showsPrec
+                                                                                 @ a
+                                                                                 $dShow
+                                                                                 GHC.Show.shows22
+                                                                                 ww10)
+                                                                              (GHC.Types.[]
+                                                                                 @ GHC.Show.ShowS)))))) }) }
+                                                 } in
+                                                 showl xs))
+                                             (GHC.Show.showsPrec @ a $dShow GHC.Show.shows22 ww2)
+                                             (GHC.Types.[] @ GHC.Show.ShowS)))) })) }) })) -}
+03bcb0def4d0999c581debeb0287d893
+  $fShowTrie_$cshowList ::
+    GHC.Show.Show a =>
+    [Data.Trie.ArrayMapped.Internal.Trie a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (ls :: [Data.Trie.ArrayMapped.Internal.Trie a])
+                   (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Data.Trie.ArrayMapped.Internal.Trie a)
+                   (Data.Trie.ArrayMapped.Internal.$fShowTrie_$cshowsPrec
+                      @ a
+                      $dShow
+                      GHC.Show.shows22)
+                   ls
+                   s) -}
+03bcb0def4d0999c581debeb0287d893
+  $fShowTrie_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S(S),1*U(U)><L,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Data.Trie.ArrayMapped.Internal.$w$cshowsPrec @ a w ww1 w2 }) -}
+dbccb17c5e278be0f9c14fad25c4645b
+  $fShowTrie_lvl27 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.showList__1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+03bcb0def4d0999c581debeb0287d893
+  $fTraversableTrie ::
+    Data.Traversable.Traversable Data.Trie.ArrayMapped.Internal.Trie
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.Trie.ArrayMapped.Internal.Trie
+                  Data.Trie.ArrayMapped.Internal.$fFunctorTrie
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrie
+                  Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse
+                  Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$csequenceA
+                  Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$cmapM
+                  Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$csequence -}
+03bcb0def4d0999c581debeb0287d893
+  $fTraversableTrie_$cmapM ::
+    GHC.Base.Monad m =>
+    (a -> m b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> m (Data.Trie.ArrayMapped.Internal.Trie b)
+  {- Arity: 3,
+     Strictness: <S(SLLLL),1*U(1*U(U(U,U),C(U),C(C1(U)),A,A),A,A,A,A)><L,C(U)><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   @ a
+                   @ b
+                   ($dMonad :: GHC.Base.Monad m)
+                   (eta :: a -> m b)
+                   (eta1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse
+                   @ m
+                   @ a
+                   @ b
+                   (GHC.Base.$p1Monad @ m $dMonad)
+                   eta
+                   eta1) -}
+03bcb0def4d0999c581debeb0287d893
+  $fTraversableTrie_$csequence ::
+    GHC.Base.Monad m =>
+    Data.Trie.ArrayMapped.Internal.Trie (m a)
+    -> m (Data.Trie.ArrayMapped.Internal.Trie a)
+  {- Arity: 2,
+     Strictness: <S(SLLLL),1*U(1*U(U(U,U),C(U),C(C1(U)),A,A),A,A,A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ (m :: * -> *)
+                   @ a
+                   ($dMonad :: GHC.Base.Monad m)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trie (m a)) ->
+                 Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse
+                   @ m
+                   @ (m a)
+                   @ a
+                   (GHC.Base.$p1Monad @ m $dMonad)
+                   (GHC.Base.id @ (m a))
+                   eta) -}
+03bcb0def4d0999c581debeb0287d893
+  $fTraversableTrie_$csequenceA ::
+    GHC.Base.Applicative f =>
+    Data.Trie.ArrayMapped.Internal.Trie (f a)
+    -> f (Data.Trie.ArrayMapped.Internal.Trie a)
+  {- Arity: 2, Strictness: <L,U(U(U,U),C(U),C(C1(U)),A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ (f :: * -> *)
+                   @ a
+                   ($dApplicative :: GHC.Base.Applicative f)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trie (f a)) ->
+                 Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse
+                   @ f
+                   @ (f a)
+                   @ a
+                   $dApplicative
+                   (GHC.Base.id @ (f a))
+                   eta) -}
+03bcb0def4d0999c581debeb0287d893
+  $fTraversableTrie_$ctraverse ::
+    GHC.Base.Applicative f =>
+    (a -> f b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> f (Data.Trie.ArrayMapped.Internal.Trie b)
+  {- Arity: 3,
+     Strictness: <S,U(U(U,U),C(U),C(C1(U)),A,A)><L,C(U)><S,1*U>,
+     Unfolding: (\ @ (f :: * -> *)
+                   @ a
+                   @ b
+                   ($dApplicative :: GHC.Base.Applicative f)
+                   (eta :: a -> f b)
+                   (eta1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case eta1 of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> GHC.Base.<*>
+                        @ f
+                        $dApplicative
+                        @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                        @ (Data.Trie.ArrayMapped.Internal.Trie b)
+                        (GHC.Base.fmap
+                           @ f
+                           (GHC.Base.$p1Applicative @ f $dApplicative)
+                           @ b
+                           @ (Data.Trie.ArrayMapped.Internal.Trunk b
+                              -> Data.Trie.ArrayMapped.Internal.Trie b)
+                           (Data.Trie.ArrayMapped.Internal.$WAccept @ b)
+                           (eta v))
+                        (Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse1
+                           @ f
+                           @ a
+                           @ b
+                           $dApplicative
+                           eta
+                           t)
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> GHC.Base.fmap
+                        @ f
+                        (GHC.Base.$p1Applicative @ f $dApplicative)
+                        @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                        @ (Data.Trie.ArrayMapped.Internal.Trie b)
+                        (Data.Trie.ArrayMapped.Internal.$WReject @ b)
+                        (Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse1
+                           @ f
+                           @ a
+                           @ b
+                           $dApplicative
+                           eta
+                           t) }) -}
+a872b439be10c608ce74d93bff9da351
+  $fTraversableTrie_$ctraverse1 ::
+    GHC.Base.Applicative f =>
+    (a -> f b)
+    -> Data.Trie.ArrayMapped.Internal.Trunk a
+    -> f (Data.Trie.ArrayMapped.Internal.Trunk b)
+  {- Arity: 3,
+     Strictness: <S,U(U(U,U),C(U),C(C1(U)),A,A)><L,C(U)><S,1*U>,
+     Unfolding: (\ @ (f :: * -> *)
+                   @ a
+                   @ b
+                   ($dApplicative :: GHC.Base.Applicative f)
+                   (eta :: a -> f b)
+                   (eta1 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 let {
+                   lvl39 :: f (Data.Trie.ArrayMapped.Internal.Trunk b)
+                   = GHC.Base.pure
+                       @ f
+                       $dApplicative
+                       @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                       (Data.Trie.ArrayMapped.Internal.Empty @ b)
+                 } in
+                 let {
+                   $dFunctor :: GHC.Base.Functor f
+                   = GHC.Base.$p1Applicative @ f $dApplicative
+                 } in
+                 letrec {
+                   go :: Data.Trie.ArrayMapped.Internal.Trunk a
+                         -> f (Data.Trie.ArrayMapped.Internal.Trunk b)
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                     case ds of wild {
+                       Data.Trie.ArrayMapped.Internal.Empty -> lvl39
+                       Data.Trie.ArrayMapped.Internal.Arc dt dt1 dt2 dt3 v t
+                       -> GHC.Base.<*>
+                            @ f
+                            $dApplicative
+                            @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                            @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                            (GHC.Base.fmap
+                               @ f
+                               $dFunctor
+                               @ b
+                               @ (Data.Trie.ArrayMapped.Internal.Trunk b
+                                  -> Data.Trie.ArrayMapped.Internal.Trunk b)
+                               (Data.Trie.ArrayMapped.Internal.$WArc
+                                  @ b
+                                  (Data.ByteString.Internal.PS dt dt1 dt2 dt3))
+                               (eta v))
+                            (go t)
+                       Data.Trie.ArrayMapped.Internal.Branch dt dt1 dt2 dt3 dt4 dt5 dt6 dt7
+                       -> GHC.Base.<*>
+                            @ f
+                            $dApplicative
+                            @ (Data.Trie.ArrayMapped.SparseArray.SparseArray
+                                 (Data.Trie.ArrayMapped.Internal.Trunk b))
+                            @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                            (GHC.Base.fmap
+                               @ f
+                               $dFunctor
+                               @ (Data.Trie.ArrayMapped.SparseArray.SparseArray b)
+                               @ (Data.Trie.ArrayMapped.SparseArray.SparseArray
+                                    (Data.Trie.ArrayMapped.Internal.Trunk b)
+                                  -> Data.Trie.ArrayMapped.Internal.Trunk b)
+                               (Data.Trie.ArrayMapped.Internal.$WBranch
+                                  @ b
+                                  (Data.ByteString.Internal.PS dt dt1 dt2 dt3))
+                               (Data.Trie.ArrayMapped.SparseArray.$w$ctraverse
+                                  @ f
+                                  @ a
+                                  @ b
+                                  $dApplicative
+                                  eta
+                                  dt4
+                                  dt5))
+                            (Data.Trie.ArrayMapped.SparseArray.$w$ctraverse
+                               @ f
+                               @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                               @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                               $dApplicative
+                               go
+                               dt6
+                               dt7) }
+                 } in
+                 go eta1) -}
+a872b439be10c608ce74d93bff9da351
+  $fTraversableTrunk ::
+    Data.Traversable.Traversable Data.Trie.ArrayMapped.Internal.Trunk
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.Trie.ArrayMapped.Internal.Trunk
+                  Data.Trie.ArrayMapped.Internal.$fFunctorTrunk
+                  Data.Trie.ArrayMapped.Internal.$fFoldableTrunk
+                  Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse1
+                  Data.Trie.ArrayMapped.Internal.$fTraversableTrunk_$csequenceA
+                  Data.Trie.ArrayMapped.Internal.$fTraversableTrunk_$cmapM
+                  Data.Trie.ArrayMapped.Internal.$fTraversableTrunk_$csequence -}
+a872b439be10c608ce74d93bff9da351
+  $fTraversableTrunk_$cmapM ::
+    GHC.Base.Monad m =>
+    (a -> m b)
+    -> Data.Trie.ArrayMapped.Internal.Trunk a
+    -> m (Data.Trie.ArrayMapped.Internal.Trunk b)
+  {- Arity: 3,
+     Strictness: <S(SLLLL),1*U(1*U(U(U,U),C(U),C(C1(U)),A,A),A,A,A,A)><L,C(U)><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   @ a
+                   @ b
+                   ($dMonad :: GHC.Base.Monad m)
+                   (eta :: a -> m b)
+                   (eta1 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse1
+                   @ m
+                   @ a
+                   @ b
+                   (GHC.Base.$p1Monad @ m $dMonad)
+                   eta
+                   eta1) -}
+a872b439be10c608ce74d93bff9da351
+  $fTraversableTrunk_$csequence ::
+    GHC.Base.Monad m =>
+    Data.Trie.ArrayMapped.Internal.Trunk (m a)
+    -> m (Data.Trie.ArrayMapped.Internal.Trunk a)
+  {- Arity: 2,
+     Strictness: <S(SLLLL),1*U(1*U(U(U,U),C(U),C(C1(U)),A,A),A,A,A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ (m :: * -> *)
+                   @ a
+                   ($dMonad :: GHC.Base.Monad m)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trunk (m a)) ->
+                 Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse1
+                   @ m
+                   @ (m a)
+                   @ a
+                   (GHC.Base.$p1Monad @ m $dMonad)
+                   (GHC.Base.id @ (m a))
+                   eta) -}
+a872b439be10c608ce74d93bff9da351
+  $fTraversableTrunk_$csequenceA ::
+    GHC.Base.Applicative f =>
+    Data.Trie.ArrayMapped.Internal.Trunk (f a)
+    -> f (Data.Trie.ArrayMapped.Internal.Trunk a)
+  {- Arity: 2, Strictness: <L,U(U(U,U),C(U),C(C1(U)),A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ (f :: * -> *)
+                   @ a
+                   ($dApplicative :: GHC.Base.Applicative f)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trunk (f a)) ->
+                 Data.Trie.ArrayMapped.Internal.$fTraversableTrie_$ctraverse1
+                   @ f
+                   @ (f a)
+                   @ a
+                   $dApplicative
+                   (GHC.Base.id @ (f a))
+                   eta) -}
+dd24b9883b03170bb45aa8bb5d932875
+  $tc'Accept :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2471168919704208253##
+                   6753025970146944376##
+                   Data.Trie.ArrayMapped.Internal.$trModule
+                   Data.Trie.ArrayMapped.Internal.$tc'Accept1) -}
+2cfc11a96606b7461c2eb3d2f3673788
+  $tc'Accept1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Accept"#) -}
+9828f38d5e49bbecf149ae4d97032260
+  $tc'Arc :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3419614049943868688##
+                   11805247694939639461##
+                   Data.Trie.ArrayMapped.Internal.$trModule
+                   Data.Trie.ArrayMapped.Internal.$tc'Arc1) -}
+6ec499c1b6877cdf27e177681261e7a0
+  $tc'Arc1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Arc"#) -}
+d16451ace336cfabc6b4393b8d4a932c
+  $tc'Branch :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17913625842277990102##
+                   3736943376775240681##
+                   Data.Trie.ArrayMapped.Internal.$trModule
+                   Data.Trie.ArrayMapped.Internal.$tc'Branch1) -}
+282e4b20180c65e3a2294afd501bc0aa
+  $tc'Branch1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Branch"#) -}
+0adb744c5fa246c3c11ff90bc8fdb7fb
+  $tc'Empty :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3888072302471419782##
+                   1936322739558751464##
+                   Data.Trie.ArrayMapped.Internal.$trModule
+                   Data.Trie.ArrayMapped.Internal.$tc'Empty1) -}
+0a782b6aa4094af6bdc5b3d0abd2102f
+  $tc'Empty1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Empty"#) -}
+38a38c8404371c3e96975598f03e83cb
+  $tc'Reject :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3870670564282558683##
+                   14329707512150842518##
+                   Data.Trie.ArrayMapped.Internal.$trModule
+                   Data.Trie.ArrayMapped.Internal.$tc'Reject1) -}
+1657af203d3c9655593c29d7d9714d1f
+  $tc'Reject1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Reject"#) -}
+64237f6c4b4e30caff6475f9fd4d6470
+  $tcTrie :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4891969763262571972##
+                   9791036792007030034##
+                   Data.Trie.ArrayMapped.Internal.$trModule
+                   Data.Trie.ArrayMapped.Internal.$tcTrie1) -}
+23a99cbd516f355854d64fdd0174defd
+  $tcTrie1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Trie"#) -}
+1384958899e8eaf041033b352e3634a6
+  $tcTrunk :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13705763156784322072##
+                   14108701263661030340##
+                   Data.Trie.ArrayMapped.Internal.$trModule
+                   Data.Trie.ArrayMapped.Internal.$tcTrunk1) -}
+65c59d2082843f5add53416753d15a20
+  $tcTrunk1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Trunk"#) -}
+363e506889e7cab83b612b6724e12961
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Data.Trie.ArrayMapped.Internal.$trModule2
+                   Data.Trie.ArrayMapped.Internal.$trModule1) -}
+2d7a94ccb35789b902720bbc8ccb972c
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Data.Trie.ArrayMapped.Internal"#) -}
+815a46667936c1e7b748d1343016ffbb
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "bytestring-trie-0.3.0.3-HLFcIfm9b5G6WckdLkDVsX"#) -}
+03bcb0def4d0999c581debeb0287d893
+  $w$c<> ::
+    GHC.Prim.Void#
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, Strictness: <L,U>x, Inline: [0] -}
+03bcb0def4d0999c581debeb0287d893
+  $w$cget ::
+    Data.Binary.Class.Binary a =>
+    forall r.
+    GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Binary.Get.Internal.Success
+         (Data.Trie.ArrayMapped.Internal.Trie a) r
+    -> Data.Binary.Get.Internal.Decoder r
+  {- Arity: 6,
+     Strictness: <L,U(C(U(A,U)),U,A)><L,U><L,U><L,U><S,U><L,C(C1(U))>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: Data.Binary.Class.Binary a)
+                   @ r
+                   (ww :: GHC.Prim.Addr#)
+                   (ww1 :: GHC.ForeignPtr.ForeignPtrContents)
+                   (ww2 :: GHC.Prim.Int#)
+                   (ww3 :: GHC.Prim.Int#)
+                   (w1 :: Data.Binary.Get.Internal.Success
+                            (Data.Trie.ArrayMapped.Internal.Trie a) r) ->
+                 let {
+                   lvl39 :: Data.Binary.Get.Internal.Get
+                              (Data.Trie.ArrayMapped.Internal.Trunk a)
+                   = Data.Trie.ArrayMapped.Internal.$fBinaryTrie_$cget1 @ a w
+                 } in
+                 let {
+                   m :: Data.Binary.Get.Internal.Get a = Data.Binary.Class.get @ a w
+                 } in
+                 let {
+                   lvl40 :: Data.ByteString.Internal.ByteString
+                            -> a -> Data.Binary.Get.Internal.Decoder r
+                     {- Arity: 2 -}
+                   = \ (i' :: Data.ByteString.Internal.ByteString) (a1 :: a) ->
+                     lvl39
+                       `cast`
+                     (Data.Binary.Get.Internal.N:Get[0]
+                          <Data.Trie.ArrayMapped.Internal.Trunk a>_R)
+                       @ r
+                       i'
+                       (\ (i'1 :: Data.ByteString.Internal.ByteString)
+                          (a2 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                        w1 i'1 (Data.Trie.ArrayMapped.Internal.$WAccept @ a a1 a2))
+                 } in
+                 let {
+                   lvl41 :: Data.ByteString.Internal.ByteString
+                            -> Data.Trie.ArrayMapped.Internal.Trunk a
+                            -> Data.Binary.Get.Internal.Decoder r
+                     {- Arity: 2 -}
+                   = \ (i' :: Data.ByteString.Internal.ByteString)
+                       (a1 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                     w1 i' (Data.Trie.ArrayMapped.Internal.$WReject @ a a1)
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww3 1#) of wild1 {
+                   GHC.Types.False
+                   -> Data.Binary.Get.Internal.readN1
+                        @ GHC.Types.Int
+                        @ Data.ByteString.Internal.ByteString
+                        Data.Trie.ArrayMapped.Internal.$fBinaryTrie5
+                        Data.Trie.ArrayMapped.Internal.$fBinaryTrie4
+                        Data.ByteString.Internal.$fMonoidByteString_$cmconcat
+                        Data.Trie.ArrayMapped.Internal.$fBinaryTrie2
+                          `cast`
+                        (<[Data.ByteString.Internal.ByteString]>_R
+                         ->_R Sym (Data.Binary.Get.Internal.N:Get[0]
+                                       <Data.ByteString.Internal.ByteString>_R))
+                        @ r
+                        (Data.ByteString.Internal.PS ww ww1 ww2 ww3)
+                        (\ (i' :: Data.ByteString.Internal.ByteString)
+                           (a1 :: Data.ByteString.Internal.ByteString) ->
+                         case a1 of wild { Data.ByteString.Internal.PS dt dt1 dt2 dt3 ->
+                         case GHC.Prim.readWord8OffAddr#
+                                @ GHC.Prim.RealWorld
+                                (GHC.Prim.plusAddr# dt dt2)
+                                0#
+                                GHC.Prim.realWorld# of ds2 { (#,#) ipv ipv1 ->
+                         case GHC.Prim.touch#
+                                @ 'GHC.Types.PtrRepLifted
+                                @ GHC.ForeignPtr.ForeignPtrContents
+                                dt1
+                                ipv of s' { DEFAULT ->
+                         case ipv1 of wild2 {
+                           DEFAULT
+                           -> lvl39
+                                `cast`
+                              (Data.Binary.Get.Internal.N:Get[0]
+                                   <Data.Trie.ArrayMapped.Internal.Trunk a>_R)
+                                @ r
+                                (Data.ByteString.Internal.PS
+                                   dt
+                                   dt1
+                                   (GHC.Prim.+# dt2 1#)
+                                   (GHC.Prim.-# dt3 1#))
+                                lvl41
+                           0##
+                           -> m `cast` (Data.Binary.Get.Internal.N:Get[0] <a>_R)
+                                @ r
+                                (Data.ByteString.Internal.PS
+                                   dt
+                                   dt1
+                                   (GHC.Prim.+# dt2 1#)
+                                   (GHC.Prim.-# dt3 1#))
+                                lvl40 } } } })
+                   GHC.Types.True
+                   -> case GHC.Prim.readWord8OffAddr#
+                             @ GHC.Prim.RealWorld
+                             (GHC.Prim.plusAddr# ww ww2)
+                             0#
+                             GHC.Prim.realWorld# of ds2 { (#,#) ipv ipv1 ->
+                      case GHC.Prim.touch#
+                             @ 'GHC.Types.PtrRepLifted
+                             @ GHC.ForeignPtr.ForeignPtrContents
+                             ww1
+                             ipv of s' { DEFAULT ->
+                      case ipv1 of wild {
+                        DEFAULT
+                        -> lvl39
+                             `cast`
+                           (Data.Binary.Get.Internal.N:Get[0]
+                                <Data.Trie.ArrayMapped.Internal.Trunk a>_R)
+                             @ r
+                             (Data.ByteString.Internal.PS
+                                ww
+                                ww1
+                                (GHC.Prim.+# ww2 1#)
+                                (GHC.Prim.-# ww3 1#))
+                             lvl41
+                        0##
+                        -> m `cast` (Data.Binary.Get.Internal.N:Get[0] <a>_R)
+                             @ r
+                             (Data.ByteString.Internal.PS
+                                ww
+                                ww1
+                                (GHC.Prim.+# ww2 1#)
+                                (GHC.Prim.-# ww3 1#))
+                             lvl40 } } } }) -}
+03bcb0def4d0999c581debeb0287d893
+  $w$cmappend ::
+    GHC.Prim.Void#
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, Strictness: <L,U>x, Inline: [0] -}
+03bcb0def4d0999c581debeb0287d893
+  $w$cput ::
+    Data.Binary.Class.Binary a =>
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> (# (), Data.ByteString.Builder.Internal.Builder #)
+  {- Arity: 2, Strictness: <L,U(C(U(A,U)),U,A)><S,1*U>, Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: Data.Binary.Class.Binary a)
+                   (w1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case w1 of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> let {
+                        ds :: Data.Binary.Put.Put
+                        = Data.Trie.ArrayMapped.Internal.$fBinaryTrie_$cput1 @ a w t
+                      } in
+                      (# case ds
+                                `cast`
+                              (Data.Binary.Put.N:PutM[0] <()>_N) of wild1 { Data.Binary.Put.PairS b1 w' ->
+                         b1 },
+                         let {
+                           ds1 :: Data.ByteString.Builder.Internal.Builder
+                           = case (Data.Binary.Class.put @ a w v)
+                                    `cast`
+                                  (Data.Binary.Put.N:PutM[0] <()>_N) of wild1 { Data.Binary.Put.PairS ds2 w2 ->
+                             w2 }
+                         } in
+                         (\ @ r (eta :: Data.ByteString.Builder.Internal.BuildStep r) ->
+                          let {
+                            eta1 :: Data.ByteString.Builder.Internal.BuildStep r
+                            = ds1 `cast` (Data.ByteString.Builder.Internal.N:Builder[0])
+                                @ r
+                                (case ds
+                                        `cast`
+                                      (Data.Binary.Put.N:PutM[0] <()>_N) of wild1 { Data.Binary.Put.PairS b1 w' ->
+                                 w' `cast` (Data.ByteString.Builder.Internal.N:Builder[0])
+                                   @ r
+                                   eta })
+                          } in
+                          let {
+                            lvl39 :: Data.ByteString.Builder.Internal.BufferRange
+                                     -> GHC.Prim.State# GHC.Prim.RealWorld
+                                     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                           Data.ByteString.Builder.Internal.BuildSignal r #)
+                              {- Arity: 2 -}
+                            = \ (ds2 :: Data.ByteString.Builder.Internal.BufferRange)
+                                (eta3 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                              case ds2 of wild3 { Data.ByteString.Builder.Internal.BufferRange dt3 dt4 ->
+                              case GHC.Prim.writeWord8OffAddr#
+                                     @ GHC.Prim.RealWorld
+                                     dt3
+                                     0#
+                                     0##
+                                     eta3 of s2 { DEFAULT ->
+                              (eta1
+                                 (Data.ByteString.Builder.Internal.BufferRange
+                                    (GHC.Prim.plusAddr# dt3 1#)
+                                    dt4))
+                                `cast`
+                              (GHC.Types.N:IO[0]
+                                   <Data.ByteString.Builder.Internal.BuildSignal r>_R)
+                                s2 } }
+                          } in
+                          \ (eta2 :: Data.ByteString.Builder.Internal.BufferRange)
+                            (eta3 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                          case eta2 of wild1 { Data.ByteString.Builder.Internal.BufferRange dt dt1 ->
+                          case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# (GHC.Prim.minusAddr# dt1 dt) 1#) of wild2 {
+                            GHC.Types.False
+                            -> case GHC.Prim.writeWord8OffAddr#
+                                      @ GHC.Prim.RealWorld
+                                      dt
+                                      0#
+                                      0##
+                                      eta3 of s2 { DEFAULT ->
+                               (eta1
+                                  (Data.ByteString.Builder.Internal.BufferRange
+                                     (GHC.Prim.plusAddr# dt 1#)
+                                     dt1))
+                                 `cast`
+                               (GHC.Types.N:IO[0]
+                                    <Data.ByteString.Builder.Internal.BuildSignal r>_R)
+                                 s2 }
+                            GHC.Types.True
+                            -> (# eta3,
+                                  Data.ByteString.Builder.Internal.BufferFull
+                                    @ r
+                                    1#
+                                    dt
+                                    lvl39
+                                      `cast`
+                                    (<Data.ByteString.Builder.Internal.BufferRange>_R
+                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                   <Data.ByteString.Builder.Internal.BuildSignal
+                                                      r>_R)) #) } })
+                           `cast`
+                         (Trans
+                              (forall (r :: <*>_N).
+                               <Data.ByteString.Builder.Internal.BuildStep r>_R
+                               ->_R <Data.ByteString.Builder.Internal.BufferRange>_R
+                               ->_R Sym (GHC.Types.N:IO[0]
+                                             <Data.ByteString.Builder.Internal.BuildSignal r>_R))
+                              (Sym (Data.ByteString.Builder.Internal.N:Builder[0]))) #)
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> let {
+                        ds :: Data.Binary.Put.Put
+                        = Data.Trie.ArrayMapped.Internal.$fBinaryTrie_$cput1 @ a w t
+                      } in
+                      (# case ds
+                                `cast`
+                              (Data.Binary.Put.N:PutM[0] <()>_N) of wild1 { Data.Binary.Put.PairS b1 w' ->
+                         b1 },
+                         (\ @ r (eta :: Data.ByteString.Builder.Internal.BuildStep r) ->
+                          let {
+                            eta1 :: Data.ByteString.Builder.Internal.BuildStep r
+                            = case ds
+                                     `cast`
+                                   (Data.Binary.Put.N:PutM[0] <()>_N) of wild1 { Data.Binary.Put.PairS b1 w' ->
+                              w' `cast` (Data.ByteString.Builder.Internal.N:Builder[0]) @ r eta }
+                          } in
+                          let {
+                            lvl39 :: Data.ByteString.Builder.Internal.BufferRange
+                                     -> GHC.Prim.State# GHC.Prim.RealWorld
+                                     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                           Data.ByteString.Builder.Internal.BuildSignal r #)
+                              {- Arity: 2 -}
+                            = \ (ds1 :: Data.ByteString.Builder.Internal.BufferRange)
+                                (eta3 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                              case ds1 of wild3 { Data.ByteString.Builder.Internal.BufferRange dt3 dt4 ->
+                              case GHC.Prim.writeWord8OffAddr#
+                                     @ GHC.Prim.RealWorld
+                                     dt3
+                                     0#
+                                     1##
+                                     eta3 of s2 { DEFAULT ->
+                              (eta1
+                                 (Data.ByteString.Builder.Internal.BufferRange
+                                    (GHC.Prim.plusAddr# dt3 1#)
+                                    dt4))
+                                `cast`
+                              (GHC.Types.N:IO[0]
+                                   <Data.ByteString.Builder.Internal.BuildSignal r>_R)
+                                s2 } }
+                          } in
+                          \ (eta2 :: Data.ByteString.Builder.Internal.BufferRange)
+                            (eta3 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                          case eta2 of wild1 { Data.ByteString.Builder.Internal.BufferRange dt dt1 ->
+                          case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# (GHC.Prim.minusAddr# dt1 dt) 1#) of wild2 {
+                            GHC.Types.False
+                            -> case GHC.Prim.writeWord8OffAddr#
+                                      @ GHC.Prim.RealWorld
+                                      dt
+                                      0#
+                                      1##
+                                      eta3 of s2 { DEFAULT ->
+                               (eta1
+                                  (Data.ByteString.Builder.Internal.BufferRange
+                                     (GHC.Prim.plusAddr# dt 1#)
+                                     dt1))
+                                 `cast`
+                               (GHC.Types.N:IO[0]
+                                    <Data.ByteString.Builder.Internal.BuildSignal r>_R)
+                                 s2 }
+                            GHC.Types.True
+                            -> (# eta3,
+                                  Data.ByteString.Builder.Internal.BufferFull
+                                    @ r
+                                    1#
+                                    dt
+                                    lvl39
+                                      `cast`
+                                    (<Data.ByteString.Builder.Internal.BufferRange>_R
+                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                   <Data.ByteString.Builder.Internal.BuildSignal
+                                                      r>_R)) #) } })
+                           `cast`
+                         (Trans
+                              (forall (r :: <*>_N).
+                               <Data.ByteString.Builder.Internal.BuildStep r>_R
+                               ->_R <Data.ByteString.Builder.Internal.BufferRange>_R
+                               ->_R Sym (GHC.Types.N:IO[0]
+                                             <Data.ByteString.Builder.Internal.BuildSignal r>_R))
+                              (Sym (Data.ByteString.Builder.Internal.N:Builder[0]))) #) }) -}
+03bcb0def4d0999c581debeb0287d893
+  $w$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int#
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,U><L,1*U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (ww :: GHC.Prim.Int#)
+                   (w1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 let {
+                   eta :: [(Data.ByteString.Internal.ByteString, a)]
+                   = Data.Trie.ArrayMapped.Internal.foldrWithKey
+                       @ a
+                       @ [(Data.ByteString.Internal.ByteString, a)]
+                       (Data.Trie.ArrayMapped.Internal.$fShowTrie2 @ a)
+                       (GHC.Types.[] @ (Data.ByteString.Internal.ByteString, a))
+                       w1
+                 } in
+                 let {
+                   lvl39 :: (Data.ByteString.Internal.ByteString, a)
+                            -> GHC.Base.String -> [GHC.Types.Char]
+                     {- Arity: 2 -}
+                   = \ (w3 :: (Data.ByteString.Internal.ByteString, a))
+                       (w4 :: GHC.Base.String)[OneShot] ->
+                     case w3 of ww1 { (,) ww2 ww3 ->
+                     GHC.Types.:
+                       @ GHC.Types.Char
+                       GHC.Show.shows9
+                       (GHC.Types.:
+                          @ GHC.Types.Char
+                          GHC.Show.shows8
+                          (GHC.Show.showLitString
+                             (Data.ByteString.Internal.unpackChars ww2)
+                             (GHC.Types.:
+                                @ GHC.Types.Char
+                                GHC.Show.shows8
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows7
+                                   (GHC.Show.$fShow(,)_$sgo
+                                      (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 w4)
+                                      (GHC.Show.showsPrec @ a w GHC.Show.shows22 ww3)
+                                      (GHC.Types.[] @ GHC.Show.ShowS)))))) }
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.># ww 10#) of wild {
+                   GHC.Types.False
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Base.++
+                        @ GHC.Types.Char
+                        Data.Trie.ArrayMapped.Internal.$fShowTrie1
+                        (GHC.Show.showList__
+                           @ (Data.ByteString.Internal.ByteString, a)
+                           lvl39
+                           eta
+                           x)
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Data.Trie.ArrayMapped.Internal.$fShowTrie1
+                           (GHC.Show.showList__
+                              @ (Data.ByteString.Internal.ByteString, a)
+                              lvl39
+                              eta
+                              (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 x))) }) -}
+03bcb0def4d0999c581debeb0287d893
+  $w$cstimes ::
+    GHC.Real.Integral b =>
+    b
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 3,
+     Strictness: <S(SLLLLLLLL),U(U,U,C(C1(U)),C(C1(U)),A,A,A,A,A)><L,U><S,1*U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   @ b
+                   (w :: GHC.Real.Integral b)
+                   (w1 :: b)
+                   (w2 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 let {
+                   $dReal :: GHC.Real.Real b = GHC.Real.$p1Integral @ b w
+                 } in
+                 case GHC.Classes.<=
+                        @ b
+                        (GHC.Real.$p2Real @ b $dReal)
+                        w1
+                        (GHC.Num.fromInteger
+                           @ b
+                           (GHC.Real.$p1Real @ b $dReal)
+                           Data.Trie.ArrayMapped.Internal.$fSemigroupTrie5) of wild {
+                   GHC.Types.False
+                   -> case GHC.Real.even @ b w w1 of wild1 {
+                        GHC.Types.False
+                        -> let {
+                             $dNum :: GHC.Num.Num b = GHC.Real.$p1Real @ b $dReal
+                           } in
+                           case GHC.Classes.==
+                                  @ b
+                                  (GHC.Classes.$p1Ord @ b (GHC.Real.$p2Real @ b $dReal))
+                                  w1
+                                  (GHC.Num.fromInteger
+                                     @ b
+                                     $dNum
+                                     Data.Trie.ArrayMapped.Internal.$fSemigroupTrie4) of wild2 {
+                             GHC.Types.False
+                             -> Data.Trie.ArrayMapped.Internal.$fSemigroupTrie3
+                                  @ a
+                                  @ b
+                                  w1
+                                  $dNum
+                                  w
+                             GHC.Types.True -> w2 }
+                        GHC.Types.True
+                        -> case Data.Trie.ArrayMapped.Internal.$fSemigroupTrie2
+                           ret_ty (Data.Trie.ArrayMapped.Internal.Trie a)
+                           of {} }
+                   GHC.Types.True
+                   -> Data.Trie.ArrayMapped.Internal.$fSemigroupTrie1 @ a }) -}
+275a19e86662a17b81a6cffada1786ef
+  $wadjust ::
+    (a -> a)
+    -> GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 6, Strictness: <L,C(U)><L,U><L,U><L,U><S,U><S,1*U>,
+     Inline: [0] -}
+82bcb5104398e6cf8594d9f5ad55a91c
+  $wadjust' ::
+    (a -> a)
+    -> GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 6, Strictness: <L,C(U)><L,U><L,U><L,U><S,U><S,1*U>,
+     Inline: [0] -}
+7f6bfb32b5bb876c35f8fb63980bdc0d
+  $wgo ::
+    GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Trie.ArrayMapped.Internal.Trunk t
+    -> GHC.Base.Maybe (Data.ByteString.Internal.ByteString, t)
+  {- Arity: 5, Strictness: <L,U><L,U><L,U><L,U><S,1*U>,
+     Inline: [0] -}
+962ac9475b6370b25d458e29322cad77
+  $wgo1 ::
+    GHC.Prim.Int#
+    -> Data.Trie.ArrayMapped.Internal.Trunk a1 -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>, Inline: [0] -}
+357d768b9c4d5e19b0dfd30b98afc853
+  $wgoJust ::
+    GHC.Prim.Int#
+    -> t
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Trie.ArrayMapped.Internal.Trunk t
+    -> (# (GHC.Types.Int, t) #)
+  {- Arity: 8,
+     Strictness: <L,U><L,U><L,U><L,U><L,U><L,U><L,U><S,1*U>,
+     Inline: [0] -}
+5c7dec76cb2a745779e2c51c329382d6
+  $wgoNothing ::
+    GHC.Prim.Int#
+    -> GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Trie.ArrayMapped.Internal.Trunk b
+    -> GHC.Base.Maybe (GHC.Types.Int, b)
+  {- Arity: 6, Strictness: <L,U><L,U><L,U><L,U><L,U><S,1*U>,
+     Inline: [0] -}
+2d82d71df55331b73fcc4a2408ff2302
+  $wlookupBy_ ::
+    (a -> Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+    -> (Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+    -> GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> b
+  {- Arity: 6, Strictness: <L,C(C1(U))><L,C(U)><L,U><L,U><L,U><S,U>,
+     Inline: [0] -}
+27b30c783a5750793b4b6a3b62b17a36
+  $wmatch_ ::
+    GHC.Prim.Addr#
+    -> GHC.ForeignPtr.ForeignPtrContents
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> GHC.Base.Maybe (GHC.Types.Int, a)
+  {- Arity: 5, Strictness: <L,U><L,U><L,U><S,U><S,1*U>, Inline: [0],
+     Unfolding: (\ @ a
+                   (ww :: GHC.Prim.Addr#)
+                   (ww1 :: GHC.ForeignPtr.ForeignPtrContents)
+                   (ww2 :: GHC.Prim.Int#)
+                   (ww3 :: GHC.Prim.Int#)
+                   (w :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case w of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<=# ww3 0#) of wild1 {
+                        GHC.Types.False
+                        -> case Data.Trie.ArrayMapped.Internal.$wgoJust
+                                  @ a
+                                  @ a
+                                  0#
+                                  v
+                                  0#
+                                  ww
+                                  ww1
+                                  ww2
+                                  ww3
+                                  t of ww4 { Unit# ww5 ->
+                           GHC.Base.Just @ (GHC.Types.Int, a) ww5 }
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ (GHC.Types.Int, a)
+                             (Data.Trie.ArrayMapped.Internal.$fFoldableTrie_z0, v) }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<=# ww3 0#) of wild1 {
+                        GHC.Types.False
+                        -> Data.Trie.ArrayMapped.Internal.$wgoNothing
+                             @ a
+                             @ a
+                             0#
+                             ww
+                             ww1
+                             ww2
+                             ww3
+                             t
+                        GHC.Types.True -> GHC.Base.Nothing @ (GHC.Types.Int, a) } }) -}
+27f9f159b293f7371b56d05bdc926a9e
+  type NonEmptyByteString = Data.ByteString.Internal.ByteString
+03bcb0def4d0999c581debeb0287d893
+  data Trie a
+    = Accept a !(Data.Trie.ArrayMapped.Internal.Trunk a)
+    | Reject !(Data.Trie.ArrayMapped.Internal.Trunk a)
+a872b439be10c608ce74d93bff9da351
+  data Trunk a
+    = Empty
+    | Arc {-# UNPACK #-}Data.Trie.ArrayMapped.Internal.NonEmptyByteString
+          a
+          !(Data.Trie.ArrayMapped.Internal.Trunk a)
+    | Branch {-# UNPACK #-}Data.ByteString.Internal.ByteString
+             {-# UNPACK #-}(Data.Trie.ArrayMapped.SparseArray.SparseArray a)
+             {-# UNPACK #-}(Data.Trie.ArrayMapped.SparseArray.SparseArray
+                              (Data.Trie.ArrayMapped.Internal.Trunk a))
+327adc7feaf50963d3bab412c1d968d3
+  adjust ::
+    (a -> a)
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 3, Strictness: <L,C(U)><S(LLLS),1*U(U,U,U,U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: a -> a)
+                   (w1 :: Data.ByteString.Internal.ByteString)
+                   (w2 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case w1 of ww { Data.ByteString.Internal.PS ww1 ww2 ww3 ww4 ->
+                 Data.Trie.ArrayMapped.Internal.$wadjust
+                   @ a
+                   w
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   w2 }) -}
+4f87eaf6ac4ddde0fc63fd933d547505
+  adjust' ::
+    (a -> a)
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 3, Strictness: <L,C(U)><S(LLLS),1*U(U,U,U,U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: a -> a)
+                   (w1 :: Data.ByteString.Internal.ByteString)
+                   (w2 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case w1 of ww { Data.ByteString.Internal.PS ww1 ww2 ww3 ww4 ->
+                 Data.Trie.ArrayMapped.Internal.$wadjust'
+                   @ a
+                   w
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   w2 }) -}
+308af13d42d8c4904b051ff1d9a9b40f
+  alter ::
+    (GHC.Base.Maybe a -> GHC.Base.Maybe a)
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, Strictness: <L,C(U)>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a (f :: GHC.Base.Maybe a -> GHC.Base.Maybe a) ->
+                 Data.Trie.ArrayMapped.Internal.alterBy_
+                   @ a
+                   (\ (v :: a)
+                      (t :: Data.Trie.ArrayMapped.Internal.Trunk a)[OneShot] ->
+                    case f (GHC.Base.Just @ a v) of wild {
+                      GHC.Base.Nothing -> Data.Trie.ArrayMapped.Internal.$WReject @ a t
+                      GHC.Base.Just v1
+                      -> Data.Trie.ArrayMapped.Internal.$WAccept @ a v1 t })
+                   (\ (t :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    case f (GHC.Base.Nothing @ a) of wild {
+                      GHC.Base.Nothing -> Data.Trie.ArrayMapped.Internal.$WReject @ a t
+                      GHC.Base.Just v
+                      -> Data.Trie.ArrayMapped.Internal.$WAccept @ a v t })) -}
+acfb02b2fcfe5ff59bb3e7c86958a34b
+  alterBy ::
+    (Data.Trie.ArrayMapped.Internal.Trie a
+     -> Data.Trie.ArrayMapped.Internal.Trie a)
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, Strictness: <L,C(U)>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (f :: Data.Trie.ArrayMapped.Internal.Trie a
+                         -> Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 Data.Trie.ArrayMapped.Internal.alterBy_
+                   @ a
+                   (\ (v :: a)
+                      (t :: Data.Trie.ArrayMapped.Internal.Trunk a)[OneShot] ->
+                    f (Data.Trie.ArrayMapped.Internal.$WAccept @ a v t))
+                   (\ (t :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    f (Data.Trie.ArrayMapped.Internal.$WReject @ a t))) -}
+a48173130ed918ff01f05df5c54ebbf5
+  alterBy_ ::
+    (a
+     -> Data.Trie.ArrayMapped.Internal.Trunk a
+     -> Data.Trie.ArrayMapped.Internal.Trie a)
+    -> (Data.Trie.ArrayMapped.Internal.Trunk a
+        -> Data.Trie.ArrayMapped.Internal.Trie a)
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 2, Strictness: <L,C(C1(U))><L,C(U)> -}
+e696198ec3d2fe2cdf23ccabeb9c12f3
+  assocsBy ::
+    (Data.ByteString.Internal.ByteString -> a -> b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> [b]
+  {- Arity: 2, Strictness: <L,C(U)><S,1*U>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ @ a
+                   @ b
+                   (f :: Data.ByteString.Internal.ByteString -> a -> b)
+                   (t :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 GHC.Base.build
+                   @ b
+                   (\ @ b1 ->
+                    Data.Trie.ArrayMapped.Internal.assocsByFB @ a @ b @ b1 f t)) -}
+2b25dd440214db07d060988ff7c3b0a9
+  assocsByFB ::
+    (Data.ByteString.Internal.ByteString -> a -> b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> (b -> c -> c) -> c -> c
+  {- Arity: 4, Strictness: <L,C(U)><S,1*U><L,C(C1(U))><L,U>,
+     Inline: INLINE[0] (sat-args=4),
+     Unfolding: InlineRule (4, False, False)
+                (\ @ a
+                   @ b
+                   @ c
+                   (f :: Data.ByteString.Internal.ByteString -> a -> b)
+                   (t :: Data.Trie.ArrayMapped.Internal.Trie a)
+                   (cons :: b -> c -> c)
+                   (nil :: c) ->
+                 Data.Trie.ArrayMapped.Internal.foldrWithKey
+                   @ a
+                   @ c
+                   (\ (x :: Data.ByteString.Internal.ByteString) (x1 :: a)[OneShot] ->
+                    cons (f x x1))
+                   nil
+                   t) -}
+8edac7122c2c9a810a40ba0c89307a30
+  contextualFilterMap ::
+    (a -> Data.Trie.ArrayMapped.Internal.Trunk a -> GHC.Base.Maybe b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie b
+  {- Arity: 2, Strictness: <L,C(C1(U))><S,1*U> -}
+6afeabf3fa873d08125e83e3ad5bc6d3
+  contextualMap ::
+    (a -> Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie b
+  {- Arity: 2, Strictness: <L,C(C1(U))><S,1*U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (f :: a -> Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 let {
+                   f2 :: Data.Trie.ArrayMapped.Internal.Trunk a -> a -> b
+                     {- Arity: 2, Strictness: <L,U><L,U>,
+                        Unfolding: InlineRule (2, True, True)
+                                   (\ (t :: Data.Trie.ArrayMapped.Internal.Trunk a) (v :: a) ->
+                                    f v t) -}
+                   = \ (t :: Data.Trie.ArrayMapped.Internal.Trunk a)
+                       (v :: a)[OneShot] ->
+                     f v t
+                 } in
+                 let {
+                   f1 :: a -> b
+                     {- Arity: 1, Strictness: <L,U>,
+                        Unfolding: InlineRule (1, True, False)
+                                   (\ (v :: a) -> f v (Data.Trie.ArrayMapped.Internal.Empty @ a)) -}
+                   = \ (v :: a) -> f v (Data.Trie.ArrayMapped.Internal.Empty @ a)
+                 } in
+                 letrec {
+                   go :: Data.Trie.ArrayMapped.Internal.Trunk a
+                         -> Data.Trie.ArrayMapped.Internal.Trunk b
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                     case ds of wild {
+                       Data.Trie.ArrayMapped.Internal.Empty
+                       -> Data.Trie.ArrayMapped.Internal.Empty @ b
+                       Data.Trie.ArrayMapped.Internal.Arc dt dt1 dt2 dt3 v t
+                       -> case go t of dt4 { DEFAULT ->
+                          Data.Trie.ArrayMapped.Internal.Arc @ b dt dt1 dt2 dt3 (f v t) dt4 }
+                       Data.Trie.ArrayMapped.Internal.Branch dt dt1 dt2 dt3 dt4 dt5 dt6 dt7
+                       -> case Data.Trie.ArrayMapped.SparseArray.$wrzipWith_
+                                 @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                                 @ a
+                                 @ b
+                                 f2
+                                 f1
+                                 dt6
+                                 dt7
+                                 dt4
+                                 dt5 of dt8 { Data.Trie.ArrayMapped.SparseArray.SA dt9 dt10 ->
+                          case Data.Trie.ArrayMapped.SparseArray.$wmap
+                                 @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                                 @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                                 go
+                                 dt6
+                                 dt7 of dt11 { Data.Trie.ArrayMapped.SparseArray.SA dt12 dt13 ->
+                          Data.Trie.ArrayMapped.Internal.Branch
+                            @ b
+                            dt
+                            dt1
+                            dt2
+                            dt3
+                            dt9
+                            dt10
+                            dt12
+                            dt13 } } }
+                 } in
+                 case eta of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case go t of dt { DEFAULT ->
+                      Data.Trie.ArrayMapped.Internal.Accept @ b (f v t) dt }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> case go t of dt { DEFAULT ->
+                      Data.Trie.ArrayMapped.Internal.Reject @ b dt } }) -}
+f1fa72f7cb67a1b5b657229bc1a1778a
+  contextualMap' ::
+    (a -> Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie b
+  {- Arity: 2, Strictness: <L,C(C1(U))><S,1*U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (f :: a -> Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+                   (eta :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 let {
+                   f2 :: Data.Trie.ArrayMapped.Internal.Trunk a -> a -> b
+                     {- Arity: 2, Strictness: <L,U><L,U>,
+                        Unfolding: InlineRule (2, True, True)
+                                   (\ (t :: Data.Trie.ArrayMapped.Internal.Trunk a) (v :: a) ->
+                                    f v t) -}
+                   = \ (t :: Data.Trie.ArrayMapped.Internal.Trunk a)
+                       (v :: a)[OneShot] ->
+                     f v t
+                 } in
+                 let {
+                   f1 :: a -> b
+                     {- Arity: 1, Strictness: <L,U>,
+                        Unfolding: InlineRule (1, True, False)
+                                   (\ (v :: a) -> f v (Data.Trie.ArrayMapped.Internal.Empty @ a)) -}
+                   = \ (v :: a) -> f v (Data.Trie.ArrayMapped.Internal.Empty @ a)
+                 } in
+                 letrec {
+                   go :: Data.Trie.ArrayMapped.Internal.Trunk a
+                         -> Data.Trie.ArrayMapped.Internal.Trunk b
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                     case ds of wild {
+                       Data.Trie.ArrayMapped.Internal.Empty
+                       -> Data.Trie.ArrayMapped.Internal.Empty @ b
+                       Data.Trie.ArrayMapped.Internal.Arc dt dt1 dt2 dt3 v t
+                       -> case f v t of x1 { DEFAULT ->
+                          case go t of dt4 { DEFAULT ->
+                          Data.Trie.ArrayMapped.Internal.Arc @ b dt dt1 dt2 dt3 x1 dt4 } }
+                       Data.Trie.ArrayMapped.Internal.Branch dt dt1 dt2 dt3 dt4 dt5 dt6 dt7
+                       -> case Data.Trie.ArrayMapped.SparseArray.$wrzipWith'_
+                                 @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                                 @ a
+                                 @ b
+                                 f2
+                                 f1
+                                 dt6
+                                 dt7
+                                 dt4
+                                 dt5 of dt8 { Data.Trie.ArrayMapped.SparseArray.SA dt9 dt10 ->
+                          case Data.Trie.ArrayMapped.SparseArray.$wmap'
+                                 @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                                 @ (Data.Trie.ArrayMapped.Internal.Trunk b)
+                                 go
+                                 dt6
+                                 dt7 of dt11 { Data.Trie.ArrayMapped.SparseArray.SA dt12 dt13 ->
+                          Data.Trie.ArrayMapped.Internal.Branch
+                            @ b
+                            dt
+                            dt1
+                            dt2
+                            dt3
+                            dt9
+                            dt10
+                            dt12
+                            dt13 } } }
+                 } in
+                 case eta of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v t
+                   -> case f v t of x1 { DEFAULT ->
+                      case go t of dt { DEFAULT ->
+                      Data.Trie.ArrayMapped.Internal.Accept @ b x1 dt } }
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> case go t of dt { DEFAULT ->
+                      Data.Trie.ArrayMapped.Internal.Reject @ b dt } }) -}
+97706135d5a99e4418ed30b3fc2f3699
+  contextualMapBy ::
+    (Data.ByteString.Internal.ByteString
+     -> a -> Data.Trie.ArrayMapped.Internal.Trunk a -> GHC.Base.Maybe b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie b
+  {- Arity: 2, Strictness: <L,C(C1(C1(U)))><S,1*U> -}
+03bcb0def4d0999c581debeb0287d893
+  empty :: Data.Trie.ArrayMapped.Internal.Trie a
+  {- HasNoCafRefs, Strictness: m2, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.ArrayMapped.Internal.Reject
+                   @ a
+                   (Data.Trie.ArrayMapped.Internal.Empty @ a)) -}
+4943f2a0ba638e1b7aca41d142e06c70
+  filterMap ::
+    (a -> GHC.Base.Maybe b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie b
+  {- Arity: 2, Strictness: <L,C(U)><S,1*U>, Inline: NOINLINE[1] -}
+03bcb0def4d0999c581debeb0287d893
+  foldrWithKey ::
+    (Data.ByteString.Internal.ByteString -> a -> b -> b)
+    -> b -> Data.Trie.ArrayMapped.Internal.Trie a -> b
+  {- Arity: 3, Strictness: <L,C(C1(C1(U)))><L,U><S,1*U> -}
+0a030824338bfef0e550310333622b68
+  foldrWithKey' ::
+    (Data.ByteString.Internal.ByteString -> a -> b -> b)
+    -> b -> Data.Trie.ArrayMapped.Internal.Trie a -> b
+  {- Arity: 3, Strictness: <L,C(C1(C1(U)))><L,U><S,1*U> -}
+686389bd8b529b4897568a1823777736
+  lookup ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Base.Maybe a
+  {- Arity: 1, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.ArrayMapped.Internal.lookupBy_
+                   @ a
+                   @ (GHC.Base.Maybe a)
+                   (\ (v :: a) (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    GHC.Base.Just @ a v)
+                   (GHC.Base.const
+                      @ (GHC.Base.Maybe a)
+                      @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                      (GHC.Base.Nothing @ a))) -}
+59d7dad9599fc09b9bd7055537c16e80
+  lookupBy ::
+    (GHC.Base.Maybe a -> Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> b
+  {- Arity: 1, Strictness: <L,C(C(U))>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   @ b
+                   (f :: GHC.Base.Maybe a
+                         -> Data.Trie.ArrayMapped.Internal.Trunk a -> b) ->
+                 Data.Trie.ArrayMapped.Internal.lookupBy_
+                   @ a
+                   @ b
+                   (\ (x :: a) -> f (GHC.Base.Just @ a x))
+                   (f (GHC.Base.Nothing @ a))) -}
+30aeb077719034a675c8e73c555aca5b
+  lookupBy_ ::
+    (a -> Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+    -> (Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+    -> Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> b
+  {- Arity: 3,
+     Strictness: <L,C(C1(U))><L,C(U)><S(LLLS),1*U(U,U,U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ b
+                   (w :: a -> Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+                   (w1 :: Data.Trie.ArrayMapped.Internal.Trunk a -> b)
+                   (w2 :: Data.ByteString.Internal.ByteString) ->
+                 case w2 of ww { Data.ByteString.Internal.PS ww1 ww2 ww3 ww4 ->
+                 Data.Trie.ArrayMapped.Internal.$wlookupBy_
+                   @ a
+                   @ b
+                   w
+                   w1
+                   ww1
+                   ww2
+                   ww3
+                   ww4 }) -}
+172881b49fe31ff26515a7f4560459cb
+  mapBy ::
+    (Data.ByteString.Internal.ByteString -> a -> GHC.Base.Maybe b)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie b
+  {- Arity: 2, Strictness: <L,C(C(U))><S,1*U> -}
+3980da01f31b9d92eefb28667cfebfd3
+  match_ ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> GHC.Base.Maybe (GHC.Types.Int, a)
+  {- Arity: 2, Strictness: <S(LLLS),1*U(U,U,U,U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   (w :: Data.ByteString.Internal.ByteString)
+                   (w1 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case w of ww { Data.ByteString.Internal.PS ww1 ww2 ww3 ww4 ->
+                 Data.Trie.ArrayMapped.Internal.$wmatch_
+                   @ a
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   w1 }) -}
+fdf2c70e151a1c348ca8d207e07a22ed
+  member ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Types.Bool
+  {- Arity: 1, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.ArrayMapped.Internal.lookupBy_
+                   @ a
+                   @ GHC.Types.Bool
+                   (\ (ds :: a) (ds1 :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                    GHC.Types.True)
+                   (GHC.Base.const
+                      @ GHC.Types.Bool
+                      @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                      GHC.Types.False)) -}
+839e559358da956ef0ba8cae5a663020
+  mergeBy ::
+    (a -> a -> GHC.Base.Maybe a)
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Strictness: x -}
+346a8958621afd47b6929b4946daa61a
+  minAssoc ::
+    Data.Trie.ArrayMapped.Internal.Trie a
+    -> GHC.Base.Maybe (Data.ByteString.Internal.ByteString, a)
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case ds of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept v ds1
+                   -> GHC.Base.Just
+                        @ (Data.ByteString.Internal.ByteString, a)
+                        (Data.ByteString.empty, v)
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> Data.Trie.ArrayMapped.Internal.minAssoc_go
+                        @ a
+                        @ a
+                        Data.ByteString.empty
+                        t }) -}
+f43cf8d009af1250d31c3af8c4a3947a
+  minAssoc_go ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trunk t
+    -> GHC.Base.Maybe (Data.ByteString.Internal.ByteString, t)
+  {- Arity: 2, Strictness: <S,1*U(U,U,U,U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   @ t
+                   (w :: Data.ByteString.Internal.ByteString)
+                   (w1 :: Data.Trie.ArrayMapped.Internal.Trunk t) ->
+                 case w of ww { Data.ByteString.Internal.PS ww1 ww2 ww3 ww4 ->
+                 Data.Trie.ArrayMapped.Internal.$wgo
+                   @ a
+                   @ t
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   w1 }) -}
+debc067290ddb076190b6e2fa09b46eb
+  null :: Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a (ds :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 let {
+                   fail :: GHC.Prim.Void# -> GHC.Types.Bool {- Arity: 1 -}
+                   = \ (ds1 :: GHC.Prim.Void#)[OneShot] -> GHC.Types.False
+                 } in
+                 case ds of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept ipv ipv1
+                   -> fail GHC.Prim.void#
+                   Data.Trie.ArrayMapped.Internal.Reject ds1
+                   -> case ds1 of wild1 {
+                        DEFAULT -> fail GHC.Prim.void#
+                        Data.Trie.ArrayMapped.Internal.Empty -> GHC.Types.True } }) -}
+13b0ca2f849168d659ed5d106f3a6e80
+  prepend_ ::
+    Data.Trie.ArrayMapped.Internal.NonEmptyByteString
+    -> Data.Trie.ArrayMapped.Internal.Trunk a
+    -> Data.Trie.ArrayMapped.Internal.Trunk a
+  {- Arity: 2, Strictness: <L,1*U(U,U,U,1*U)><S,1*U>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ @ a
+                   (s0 :: Data.Trie.ArrayMapped.Internal.NonEmptyByteString)
+                   (ds :: Data.Trie.ArrayMapped.Internal.Trunk a) ->
+                 case ds of wild {
+                   Data.Trie.ArrayMapped.Internal.Empty
+                   -> Data.Trie.ArrayMapped.Internal.Empty @ a
+                   Data.Trie.ArrayMapped.Internal.Arc dt dt1 dt2 dt3 v t
+                   -> case Data.ByteString.Internal.$fMonoidByteString_$cmappend
+                             s0
+                             (Data.ByteString.Internal.PS
+                                dt
+                                dt1
+                                dt2
+                                dt3) of dt4 { Data.ByteString.Internal.PS dt5 dt6 dt7 dt8 ->
+                      Data.Trie.ArrayMapped.Internal.Arc @ a dt5 dt6 dt7 dt8 v t }
+                   Data.Trie.ArrayMapped.Internal.Branch dt dt1 dt2 dt3 dt4 dt5 dt6 dt7
+                   -> case Data.ByteString.Internal.$fMonoidByteString_$cmappend
+                             s0
+                             (Data.ByteString.Internal.PS
+                                dt
+                                dt1
+                                dt2
+                                dt3) of dt8 { Data.ByteString.Internal.PS dt9 dt10 dt11 dt12 ->
+                      Data.Trie.ArrayMapped.Internal.Branch
+                        @ a
+                        dt9
+                        dt10
+                        dt11
+                        dt12
+                        dt4
+                        dt5
+                        dt6
+                        dt7 } }) -}
+41a2be60bccb7ed3b71cd6eb340c1ffd
+  singleton ::
+    Data.ByteString.Internal.ByteString
+    -> a -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(LLLS),1*U(U,U,U,U)><L,U>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ @ a (s :: Data.ByteString.Internal.ByteString) (v :: a) ->
+                 case s of wild { Data.ByteString.Internal.PS dt dt1 dt2 dt3 ->
+                 let {
+                   l :: GHC.Types.Int = GHC.Types.I# dt3
+                 } in
+                 case GHC.Base.$
+                        @ 'GHC.Types.PtrRepLifted
+                        @ GHC.Types.Bool
+                        @ GHC.Types.Bool
+                        (GHC.Base.assert
+                           @ GHC.Types.Bool
+                           (GHC.Classes.geInt l (GHC.Types.I# 0#)))
+                        (GHC.Classes.leInt l (GHC.Types.I# 0#)) of wild1 {
+                   GHC.Types.False
+                   -> Data.Trie.ArrayMapped.Internal.Reject
+                        @ a
+                        (Data.Trie.ArrayMapped.Internal.Arc
+                           @ a
+                           dt
+                           dt1
+                           dt2
+                           dt3
+                           v
+                           (Data.Trie.ArrayMapped.Internal.Empty @ a))
+                   GHC.Types.True
+                   -> Data.Trie.ArrayMapped.Internal.Accept
+                        @ a
+                        v
+                        (Data.Trie.ArrayMapped.Internal.Empty @ a) } }) -}
+52453ef3a1dcd1be786f27344e3d44e5
+  size :: Data.Trie.ArrayMapped.Internal.Trie a -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (t0 :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                 case t0 of wild {
+                   Data.Trie.ArrayMapped.Internal.Accept ds t
+                   -> Data.Trie.ArrayMapped.Internal.size_go
+                        @ a
+                        @ a
+                        Data.Trie.ArrayMapped.Internal.$fBinaryTrie5
+                        t
+                   Data.Trie.ArrayMapped.Internal.Reject t
+                   -> Data.Trie.ArrayMapped.Internal.size_go
+                        @ a
+                        @ a
+                        Data.Trie.ArrayMapped.Internal.$fFoldableTrie_z0
+                        t }) -}
+39b43c768b1008220b0186a57c05f9c3
+  size_go ::
+    GHC.Types.Int
+    -> Data.Trie.ArrayMapped.Internal.Trunk a1 -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   @ a1
+                   (w :: GHC.Types.Int)
+                   (w1 :: Data.Trie.ArrayMapped.Internal.Trunk a1) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Data.Trie.ArrayMapped.Internal.$wgo1 @ a @ a1 ww1 w1 }) -}
+c062451b1cdd9c8cef2e3d952bf5fec1
+  submap ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, Strictness: <S(LLLS),1*U(U,U,U,U)>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a (s :: Data.ByteString.Internal.ByteString) ->
+                 case s of wild { Data.ByteString.Internal.PS dt dt1 dt2 dt3 ->
+                 let {
+                   l :: GHC.Types.Int = GHC.Types.I# dt3
+                 } in
+                 case GHC.Base.$
+                        @ 'GHC.Types.PtrRepLifted
+                        @ GHC.Types.Bool
+                        @ GHC.Types.Bool
+                        (GHC.Base.assert
+                           @ GHC.Types.Bool
+                           (GHC.Classes.geInt l (GHC.Types.I# 0#)))
+                        (GHC.Classes.leInt l (GHC.Types.I# 0#)) of wild1 {
+                   GHC.Types.False
+                   -> let {
+                        g :: Data.Trie.ArrayMapped.Internal.Trie a
+                             -> Data.Trie.ArrayMapped.Internal.Trunk a
+                        = Data.Trie.ArrayMapped.Internal.lookupBy_
+                            @ a
+                            @ (Data.Trie.ArrayMapped.Internal.Trunk a)
+                            (Data.Trie.ArrayMapped.Internal.$WArc @ a wild)
+                            (Data.Trie.ArrayMapped.Internal.prepend_ @ a wild)
+                            wild
+                      } in
+                      \ (x :: Data.Trie.ArrayMapped.Internal.Trie a) ->
+                      case g x of dt4 { DEFAULT ->
+                      Data.Trie.ArrayMapped.Internal.Reject @ a dt4 }
+                   GHC.Types.True
+                   -> GHC.Base.id @ (Data.Trie.ArrayMapped.Internal.Trie a) } }) -}
+9571a61116f369df0787b415b2643c6c
+  subtrie ::
+    Data.ByteString.Internal.ByteString
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+    -> Data.Trie.ArrayMapped.Internal.Trie a
+  {- Arity: 1, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, False)
+                (\ @ a ->
+                 Data.Trie.ArrayMapped.Internal.lookupBy_
+                   @ a
+                   @ (Data.Trie.ArrayMapped.Internal.Trie a)
+                   (Data.Trie.ArrayMapped.Internal.$WAccept @ a)
+                   (Data.Trie.ArrayMapped.Internal.$WReject @ a)) -}
+instance Data.Binary.Class.Binary [Data.Trie.ArrayMapped.Internal.Trie]
+  = Data.Trie.ArrayMapped.Internal.$fBinaryTrie
+instance Data.Binary.Class.Binary [Data.Trie.ArrayMapped.Internal.Trunk]
+  = Data.Trie.ArrayMapped.Internal.$fBinaryTrunk
+instance GHC.Classes.Eq [Data.Trie.ArrayMapped.Internal.Trie]
+  = Data.Trie.ArrayMapped.Internal.$fEqTrie
+instance GHC.Classes.Eq [Data.Trie.ArrayMapped.Internal.Trunk]
+  = Data.Trie.ArrayMapped.Internal.$fEqTrunk
+instance Data.Foldable.Foldable [Data.Trie.ArrayMapped.Internal.Trie]
+  = Data.Trie.ArrayMapped.Internal.$fFoldableTrie
+instance Data.Foldable.Foldable [Data.Trie.ArrayMapped.Internal.Trunk]
+  = Data.Trie.ArrayMapped.Internal.$fFoldableTrunk
+instance GHC.Base.Functor [Data.Trie.ArrayMapped.Internal.Trie]
+  = Data.Trie.ArrayMapped.Internal.$fFunctorTrie
+instance GHC.Base.Functor [Data.Trie.ArrayMapped.Internal.Trunk]
+  = Data.Trie.ArrayMapped.Internal.$fFunctorTrunk
+instance GHC.Base.Monoid [Data.Trie.ArrayMapped.Internal.Trie]
+  = Data.Trie.ArrayMapped.Internal.$fMonoidTrie
+instance Control.DeepSeq.NFData [Data.Trie.ArrayMapped.Internal.Trie]
+  = Data.Trie.ArrayMapped.Internal.$fNFDataTrie
+instance Control.DeepSeq.NFData [Data.Trie.ArrayMapped.Internal.Trunk]
+  = Data.Trie.ArrayMapped.Internal.$fNFDataTrunk
+instance Data.Semigroup.Semigroup [Data.Trie.ArrayMapped.Internal.Trie]
+  = Data.Trie.ArrayMapped.Internal.$fSemigroupTrie
+instance GHC.Show.Show [Data.Trie.ArrayMapped.Internal.Trie]
+  = Data.Trie.ArrayMapped.Internal.$fShowTrie
+instance Data.Traversable.Traversable [Data.Trie.ArrayMapped.Internal.Trie]
+  = Data.Trie.ArrayMapped.Internal.$fTraversableTrie
+instance Data.Traversable.Traversable [Data.Trie.ArrayMapped.Internal.Trunk]
+  = Data.Trie.ArrayMapped.Internal.$fTraversableTrunk
+"filterMap (Just . f)" [ALWAYS] forall @ t @ b (f :: t -> b)
+  Data.Trie.ArrayMapped.Internal.filterMap @ t
+                                           @ b
+                                           (\ (x :: t) -> GHC.Base.Just @ b (f x))
+  = GHC.Base.fmap
+      @ Data.Trie.ArrayMapped.Internal.Trie
+      Data.Trie.ArrayMapped.Internal.$fFunctorTrie
+      @ t
+      @ b
+      f
+"filterMap (const Nothing)" [ALWAYS] forall @ a @ b
+  Data.Trie.ArrayMapped.Internal.filterMap @ a
+                                           @ b
+                                           (\ (ds :: a) -> GHC.Base.Nothing @ b)
+  = GHC.Base.const
+      @ (Data.Trie.ArrayMapped.Internal.Trie b)
+      @ (Data.Trie.ArrayMapped.Internal.Trie a)
+      (Data.Trie.ArrayMapped.Internal.empty @ b)
+"filterMap . filterMap" [ALWAYS] forall @ a
+                                        @ a1
+                                        @ b
+                                        (f :: a -> GHC.Base.Maybe b)
+                                        (g :: a1 -> GHC.Base.Maybe a)
+                                        (xs :: Data.Trie.ArrayMapped.Internal.Trie a1)
+  Data.Trie.ArrayMapped.Internal.filterMap @ a
+                                           @ b
+                                           f
+                                           (Data.Trie.ArrayMapped.Internal.filterMap @ a1 @ a g xs)
+  = Data.Trie.ArrayMapped.Internal.filterMap
+      @ a1
+      @ b
+      (\ (x :: a1) ->
+       GHC.Base.=<<
+         @ GHC.Base.Maybe
+         @ a
+         @ b
+         GHC.Base.$fMonadMaybe
+         f
+         (g x))
+      xs
+"filterMap . fmap" [ALWAYS] forall @ a
+                                   @ a1
+                                   @ b
+                                   ($dFunctor :: GHC.Base.Functor
+                                                   Data.Trie.ArrayMapped.Internal.Trie)
+                                   (f :: a -> GHC.Base.Maybe b)
+                                   (g :: a1 -> a)
+                                   (xs :: Data.Trie.ArrayMapped.Internal.Trie a1)
+  Data.Trie.ArrayMapped.Internal.filterMap @ a
+                                           @ b
+                                           f
+                                           (GHC.Base.fmap
+                                              @ Data.Trie.ArrayMapped.Internal.Trie
+                                              $dFunctor
+                                              @ a1
+                                              @ a
+                                              g
+                                              xs)
+  = Data.Trie.ArrayMapped.Internal.filterMap
+      @ a1
+      @ b
+      (\ (x :: a1) -> f (g x))
+      xs
+"filterMap Just" [ALWAYS] forall @ b
+  Data.Trie.ArrayMapped.Internal.filterMap @ b
+                                           @ b
+                                           (GHC.Base.Just @ b)
+  = GHC.Base.id @ (Data.Trie.ArrayMapped.Internal.Trie b)
+"fmap . filterMap" [ALWAYS] forall @ a
+                                   @ a1
+                                   @ b
+                                   ($dFunctor :: GHC.Base.Functor
+                                                   Data.Trie.ArrayMapped.Internal.Trie)
+                                   (f :: a -> b)
+                                   (g :: a1 -> GHC.Base.Maybe a)
+                                   (xs :: Data.Trie.ArrayMapped.Internal.Trie a1)
+  GHC.Base.fmap @ Data.Trie.ArrayMapped.Internal.Trie
+                $dFunctor
+                @ a
+                @ b
+                f
+                (Data.Trie.ArrayMapped.Internal.filterMap @ a1 @ a g xs)
+  = Data.Trie.ArrayMapped.Internal.filterMap
+      @ a1
+      @ b
+      (\ (x :: a1) ->
+       Data.Functor.<$>
+         @ GHC.Base.Maybe
+         @ a
+         @ b
+         GHC.Base.$fFunctorMaybe
+         f
+         (g x))
+      xs
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
