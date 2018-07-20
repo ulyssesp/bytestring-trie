@@ -123,6 +123,7 @@ Test-Suite test-all
                    -- smallcheck(1,0,0) is the one that broke Serial and CoSerial classes apart.
                    , smallcheck        >= 1.1.1    && < 1.2
                    , lazysmallcheck    >= 0.6      && < 0.7
+                   , semigroups
 
 ----------------------------------------------------------------
 ----------------------------------------------------------- fin.
