@@ -31,7 +31,7 @@ module Data.Trie.Internal
     , breakMaximalPrefix
     
     -- * Basic functions
-    , empty, null, singleton, size
+    , empty, Data.Trie.Internal.null, singleton, size
     
     -- * Conversion and folding functions
     , foldrWithKey, toListBy
